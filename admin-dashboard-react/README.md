@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This is a react-based project that allows admin to see, add users and todo. It uses modern libraries like react, react-router-dom,
+This is a react-based project that allows admin to add users and todo and allows user to add todo. It uses modern libraries like react, react-router-dom,
 
 ## Installation
 
