@@ -7,7 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import { GridActionsCellItem } from "@mui/x-data-grid";
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import SubCard from "ui-component/cards/SubCard";
 import AnimateButton from "ui-component/extended/AnimateButton";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
@@ -19,12 +19,22 @@ import useTodo from "hooks/todo/useTodo";
 import { useSnackbar } from "components/Snackbar";
 import { useSelector } from "react-redux";
 import * as Yup from "yup";
+import { useLocation } from "react-router-dom";
 
 const Todo = () => {
   const userId = useSelector((state) => state?.userReducer?.user?._id);
   const { showModal, closeModal } = useModal();
-  const { addTodo, isAddingTodo, allTodo, updateTodo, deleteTodo } =
-    useTodo(userId);
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const search = queryParams.get("search");
+  const {
+    addTodo,
+    isAddingTodo,
+    allTodo,
+    updateTodo,
+    deleteTodo,
+    refetchTodo,
+  } = useTodo(userId, search || "");
   const { showSnackbar } = useSnackbar();
   const [todo, setTodo] = useState([]);
 
@@ -178,6 +188,10 @@ const Todo = () => {
       validation: validationSchema,
     });
   };
+
+  useEffect(() => {
+    refetchTodo();
+  }, [refetchTodo, search]);
 
   //  function to submit todo after editing
   const submit = async (values) => {

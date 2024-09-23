@@ -1,8 +1,9 @@
 import useAuth from "hooks/useAuth";
 import { useMutation, useQuery } from "react-query";
 
-const useTodo = (userId) => {
+const useTodo = (userId, search = "") => {
   const { request } = useAuth();
+  console.log(userId);
 
   // Add todo
   const { mutateAsync: addTodo, isLoading: isAddingTodo } = useMutation(
@@ -24,7 +25,7 @@ const useTodo = (userId) => {
   } = useQuery(
     `['/todo']`,
     () => {
-      return request.get("/todo");
+      return request.get("/todo", { params: { search } });
     },
     {
       enabled: !!userId,

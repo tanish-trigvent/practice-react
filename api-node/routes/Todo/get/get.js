@@ -2,13 +2,26 @@ import { todo } from "../../../models/index.js";
 
 export default async (req, res) => {
   try {
-    const { user } = req;
+    const { user, query } = req;
 
-    if (req?.user?.role == "admin") {
-      const data = await todo.find();
+    if (user?.role == "admin") {
+      const data = await todo.find({
+        $or: [
+          { title: { $regex: query.search, $options: "i" } },
+          { description: { $regex: query.search, $options: "i" } },
+        ],
+      });
+      return res.send(data);
+    } else {
+      const data = await todo.find({
+        createdBy: user?._id,
+        $or: [
+          { title: { $regex: query.search, $options: "i" } },
+          { description: { $regex: query.search, $options: "i" } },
+        ],
+      });
       return res.send(data);
     }
-    return res.status(403).send("Access denied");
   } catch (error) {
     res.status(403).send(error.message);
   }

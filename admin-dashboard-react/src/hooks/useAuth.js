@@ -1,11 +1,11 @@
-import axios from 'axios';
+import axios from "axios";
 
 function useAuth() {
   const request = axios.create({
-    baseURL: 'http://localhost:5000',
+    baseURL: "http://localhost:5000",
     headers: {
-      Authorization: `Bearer ${localStorage.getItem('token')}`
-    }
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
   });
   return { request };
 }

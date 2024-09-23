@@ -10,7 +10,6 @@ import Box from "@mui/material/Box";
 import Chip from "@mui/material/Chip";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
 import Divider from "@mui/material/Divider";
-import Grid from "@mui/material/Grid";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -29,7 +28,7 @@ import Transitions from "ui-component/extended/Transitions";
 import User1 from "assets/images/users/user-round.svg";
 
 // assets
-import { IconLogout, IconSettings, IconUser } from "@tabler/icons-react";
+import { IconLogout, IconSettings } from "@tabler/icons-react";
 import { userLogout } from "../../../../redux/user/userSlice";
 
 // ==============================|| PROFILE MENU ||============================== //
@@ -39,6 +38,7 @@ const ProfileSection = () => {
   const customization = useSelector((state) => state?.customization);
   const navigate = useNavigate();
   const user = useSelector((state) => state?.userReducer?.user);
+  const imageUrl = `http://localhost:5000/${user?.profilePhoto}`;
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
@@ -103,7 +103,7 @@ const ProfileSection = () => {
         }}
         icon={
           <Avatar
-            src={User1}
+            src={imageUrl || User1}
             sx={{
               ...theme.typography.mediumAvatar,
               margin: "8px 0 8px 8px !important",
@@ -286,7 +286,7 @@ const ProfileSection = () => {
                           }}
                           selected={selectedIndex === 0}
                           onClick={(event) =>
-                            handleListItemClick(event, 0, "#")
+                            handleListItemClick(event, 0, "/account-settings")
                           }
                         >
                           <ListItemIcon>
@@ -297,44 +297,6 @@ const ProfileSection = () => {
                               <Typography variant="body2">
                                 Account Settings
                               </Typography>
-                            }
-                          />
-                        </ListItemButton>
-                        <ListItemButton
-                          sx={{
-                            borderRadius: `${customization?.borderRadius}px`,
-                          }}
-                          selected={selectedIndex === 1}
-                          onClick={(event) =>
-                            handleListItemClick(event, 1, "#")
-                          }
-                        >
-                          <ListItemIcon>
-                            <IconUser stroke={1.5} size="1.3rem" />
-                          </ListItemIcon>
-                          <ListItemText
-                            primary={
-                              <Grid
-                                container
-                                spacing={1}
-                                justifyContent="space-between"
-                              >
-                                <Grid item>
-                                  <Typography variant="body2">
-                                    Social Profile
-                                  </Typography>
-                                </Grid>
-                                <Grid item>
-                                  <Chip
-                                    label="02"
-                                    size="small"
-                                    sx={{
-                                      bgcolor: theme.palette.warning.dark,
-                                      color: theme.palette.background.default,
-                                    }}
-                                  />
-                                </Grid>
-                              </Grid>
                             }
                           />
                         </ListItemButton>

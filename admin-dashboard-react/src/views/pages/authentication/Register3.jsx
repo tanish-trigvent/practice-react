@@ -45,42 +45,42 @@ const Register = () => {
   // schema for validation
   const validationSchema = Yup.object().shape({
     firstName: Yup.string()
-      .required("First Name is required")
-      .min(3, "Name must have minimun 3 characters")
+      .required("first name is required")
+      .min(3, "name must have minimun 3 characters")
       .matches(
         /^[a-zA-Z]+(?: [a-zA-Z]+)?$/,
 
-        "First Letter of name should be capital and name should be string"
+        "numbers are not allowed"
       ),
     lastName: Yup.string()
-      .required("First Name is required")
-      .min(3, "Name must have minimun 3 characters")
+      .required("last name is required")
+      .min(3, "name must have minimun 3 characters")
       .matches(
         /^[a-zA-Z]+(?: [a-zA-Z]+)?$/,
 
-        "First Letter of name should be capital and name should be string"
+        "numbers are not allowed"
       ),
-    email: Yup.string().email("Invalid email !").required("Email is Required"),
+    email: Yup.string().email("invalid email !").required("email is required"),
     password: Yup.string()
-      .required("This field is required")
+      .required("password is required")
       .min(
         8,
 
-        "Pasword must be 8 or more characters"
+        "pasword must be 8 or more characters"
       )
       .matches(
         /(?=.*[a-z])(?=.*[A-Z])\w+/,
 
-        "Password ahould contain at least one uppercase and lowercase character"
+        "password should contain at least one uppercase and lowercase character"
       )
       .matches(
         /\d/,
 
-        "Password should contain at least one number"
+        "password should contain at least one number"
       )
       .matches(
         /[`!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?~]/,
-        "Password should contain at least one special character"
+        "password should contain at least one special character"
       ),
   });
 
@@ -148,7 +148,7 @@ const Register = () => {
                       onSuccess={registerUser}
                       validation={validationSchema}
                     >
-                      <UserRegisterForm />
+                      <UserRegisterForm isEditEmail="true" />
                       <AnimateButton>
                         <Button
                           variant="contained"

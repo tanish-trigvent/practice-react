@@ -2,7 +2,7 @@ import { Stack } from "@mui/material";
 import MuiTextField from "components/input/MuiTextField";
 import React from "react";
 
-const UserRegisterForm = ({ isEditing }) => {
+const UserRegisterForm = ({ isEditing, isEditEmail = "false" }) => {
   return (
     <Stack gap={2}>
       <MuiTextField
@@ -33,6 +33,7 @@ const UserRegisterForm = ({ isEditing }) => {
             borderRadius: "12px",
           },
         }}
+        disabled={isEditEmail === "false"}
       />
       {!isEditing && (
         <MuiTextField

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { forwardRef, useEffect } from "react";
+import { forwardRef, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 
@@ -18,6 +18,7 @@ import { MENU_OPEN, SET_MENU } from "../../../../../redux/actions";
 
 // assets
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
+import menuItems from "menu-items";
 
 // ==============================|| SIDEBAR MENU LIST ITEMS ||============================== //
 
@@ -63,14 +64,14 @@ const NavItem = ({ item, level }) => {
   };
 
   // active menu item on page load
-  useEffect(() => {
-    const currentIndex = document.location.pathname
-      .toString()
-      .split("/")
-      .findIndex((id) => id === item.id);
-    if (currentIndex > -1) {
-      dispatch({ type: MENU_OPEN, id: item.id });
-    }
+  useMemo(() => {
+    const pathName = window.location.pathname;
+    console.log(pathName);
+
+    const activeMenu = menuItems?.items?.filter(
+      (item) => item.url === pathName
+    );
+    dispatch({ type: MENU_OPEN, id: activeMenu?.[0]?.id });
     // eslint-disable-next-line
   }, [pathname]);
 

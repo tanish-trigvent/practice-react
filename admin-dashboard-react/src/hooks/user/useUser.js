@@ -91,7 +91,48 @@ export default function useUser(userId) {
     }
   );
 
+  // change password
+
+  const { mutateAsync: changePassword, isLoading: isChangingPassword } =
+    useMutation(async ({ id, payload }) => {
+      const response = await request.put(`/user/${id}/changePassword`, payload);
+      return response.data;
+    });
+
+  // get User
+
+  const {
+    data: userDetail,
+    isLoading: isLoadingUser,
+    refetch: refetchUser,
+  } = useQuery(
+    `['/user/:id}]`,
+    async () => {
+      const response = await request.get(`/user/${userId}`);
+      return response.data;
+    },
+    {
+      enabled: !!userId,
+    }
+  );
+
+  // change profile photo
+
+  const { mutateAsync: uploadPhoto } = useMutation(async ({ id, payload }) => {
+    const response = await request.put(
+      `/user/${id}/changeProfilePhoto`,
+      payload
+    );
+    return response.data;
+  });
+
   return {
+    uploadPhoto,
+    refetchUser,
+    changePassword,
+    userDetail,
+    isLoadingUser,
+    isChangingPassword,
     forgotPassword,
     userLogin,
     userRegister,

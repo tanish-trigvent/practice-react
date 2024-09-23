@@ -7,7 +7,6 @@
     "email": "CodedThemes@gmail.com",
     "url": "https://codedthemes.com/"
   },
-  "homepage": "https://berrydashboard.io/free",
   "scripts": {
     "start": "react-scripts start",
     "build": "vite build",
@@ -46,6 +45,7 @@
     "react-apexcharts": "^1.4.1",
     "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",
+    "react-dropzone": "^14.2.3",
     "react-hook-form": "^7.53.0",
     "react-otp-input": "^3.1.1",
     "react-perfect-scrollbar": "^1.5.8",

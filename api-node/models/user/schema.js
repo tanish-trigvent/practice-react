@@ -1,28 +1,35 @@
 import mongoose from "mongoose";
 
-const userSchema = mongoose.Schema({
+const userSchema = mongoose.Schema(
+  {
     firstName: {
-        type: 'string'
+      type: "string",
     },
     lastName: {
-        type: 'string'
+      type: "string",
     },
     email: {
-        type: 'string'
+      type: "string",
     },
     password: {
-        type: 'string'
+      type: "string",
     },
     role: {
-        type: 'string',
-        default: 'user'
+      type: "string",
+      default: "user",
     },
     otp: {
-        type: 'string',
-        default: ''
+      type: "string",
+      default: "",
     },
-}, {
-    timestamps: true
-})
+    profilePhoto: {
+      type: "string",
+      default: "",
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
 
-export default userSchema
+export default userSchema;

@@ -1,10 +1,15 @@
-import Router from 'express-promise-router'
-import _delete from './delete/delete.js'
-import update from './put/put.js'
+import Router from "express-promise-router";
+import _delete from "./delete/delete.js";
+import update from "./put/put.js";
+import changePassword from "./changePassword/index.js";
+import get from "./get/get.js";
+import changeProfilePhoto from "./changeProfilePhoto/index.js";
 
+const router = Router();
+router.delete("/", _delete);
+router.put("/", update);
+router.get("/", get);
+router.use("/changePassword", changePassword);
+router.use("/changeProfilePhoto", changeProfilePhoto);
 
-const router = Router()
-router.delete('/', _delete)
-router.put('/', update)
-
-export default router
+export default router;
