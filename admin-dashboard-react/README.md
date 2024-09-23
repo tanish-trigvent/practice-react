@@ -1,6 +1,6 @@
 ![NPM version][npm-image]
 
-# GIFTOS
+# Dashboard
 
 ## Introduction
 
