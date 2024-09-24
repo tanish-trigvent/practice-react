@@ -1,6 +1,7 @@
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { IconButton, InputAdornment, TextField } from "@mui/material";
+import dayjs from "dayjs";
 import React, { useState } from "react";
 import { Controller } from "react-hook-form";
 
@@ -28,7 +29,11 @@ function MuiTextField({
           // eslint-disable-next-line react/jsx-props-no-spreading
           {...rest}
           // eslint-disable-next-line react/jsx-props-no-spreading
-          value={value}
+          value={
+            type === "datetime-local"
+              ? dayjs(value).format("YYYY-MM-DDTHH:mm")
+              : value
+          }
           onChange={onChange}
           onBlur={onBlur}
           name={name}

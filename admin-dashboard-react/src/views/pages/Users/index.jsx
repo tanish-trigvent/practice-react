@@ -24,24 +24,16 @@ const Users = () => {
   // schema for validation
   const validationSchema = Yup.object().shape({
     firstName: Yup.string()
-      .required("first name is required")
-      .min(3, "name must have minimun 3 characters")
-      .matches(
-        /^[a-zA-Z]+(?: [a-zA-Z]+)?$/,
-
-        "numbers are not allowed"
-      ),
+      .required("First name is required")
+      .min(3, "Name must have a minimum of 3 characters")
+      .matches(/^[a-zA-Z]+(?: [a-zA-Z]+)*\s*$/, "Numbers are not allowed"),
     lastName: Yup.string()
-      .required("last name is required")
-      .min(3, "name must have minimun 3 characters")
-      .matches(
-        /^[a-zA-Z]+(?: [a-zA-Z]+)?$/,
-
-        "numbers are not allowed"
-      ),
+      .required("First name is required")
+      .min(3, "Name must have a minimum of 3 characters")
+      .matches(/^[a-zA-Z]+(?: [a-zA-Z]+)*\s*$/, "Numbers are not allowed"),
     email: Yup.string().email("invalid email !").required("email is required"),
     password: Yup.string()
-      .required("this field is required")
+      .required("password is required")
       .min(
         8,
 
@@ -68,7 +60,6 @@ const Users = () => {
     let response;
     try {
       response = await userRegister(values);
-      console.log(response);
       showSnackbar(response.message, "success");
       closeModal();
     } catch (error) {
@@ -95,7 +86,7 @@ const Users = () => {
       title: "Add User",
       confirmText: "Save",
       onSubmit: handleUserRegister,
-      content: <UserRegisterForm />,
+      content: <UserRegisterForm isEditEmail="true" />,
       validation: validationSchema,
     });
   };

@@ -18,6 +18,7 @@ import useUser from "hooks/user/useUser";
 import { useSnackbar } from "components/Snackbar";
 import UserRegisterForm from "components/authentication/UserRegisterForm";
 import * as Yup from "yup";
+import { useState } from "react";
 
 // assets
 
@@ -27,6 +28,7 @@ const Register = () => {
   const downMD = useMediaQuery((theme) => theme.breakpoints.down("md"));
   const { userRegister } = useUser();
   const { showSnackbar } = useSnackbar();
+  const [strength, setStrength] = useState(0);
   const navigate = useNavigate();
 
   const registerUser = async (values) => {

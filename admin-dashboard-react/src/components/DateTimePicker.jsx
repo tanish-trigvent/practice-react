@@ -23,10 +23,7 @@ const DateTimePickerHelper = ({
         control={control}
         defaultValue={defaultValue ? dayjs(defaultValue) : null}
         rules={rules}
-        render={({
-          field: { onChange, value },
-          fieldState: { invalid, error },
-        }) => (
+        render={({ field: { onChange, value }, fieldState: { error } }) => (
           <DateTimePicker
             {...props}
             sx={{
@@ -35,7 +32,6 @@ const DateTimePickerHelper = ({
                 borderRadius: "12px",
               },
             }}
-            label={label}
             disablePast
             value={value ? dayjs(value) : null}
             onChange={(newValue) => {
@@ -44,11 +40,9 @@ const DateTimePickerHelper = ({
             renderInput={(params) => (
               <TextField
                 {...params}
-                error={invalid}
-                helperText={
-                  // eslint-disable-next-line no-nested-ternary
-                  error && error.message
-                }
+                error
+                helperText={error ? error.message : null}
+                required
               />
             )}
           />

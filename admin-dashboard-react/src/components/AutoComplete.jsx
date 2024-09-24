@@ -27,7 +27,8 @@ const BasicAutocomplete = ({
         <Autocomplete
           value={value}
           onChange={(event, newValue) => {
-            onChange(newValue.value);
+            // Handle null case
+            onChange(newValue ? newValue.value : null);
           }}
           sx={{
             ...sx,

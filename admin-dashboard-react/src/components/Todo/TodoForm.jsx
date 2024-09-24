@@ -1,6 +1,5 @@
 import { Grid } from "@mui/material";
 import BasicAutocomplete from "components/AutoComplete";
-import DateTimePickerHelper from "components/DateTimePicker";
 import MuiTextField from "components/input/MuiTextField";
 import React from "react";
 
@@ -50,17 +49,19 @@ const TodoForm = ({ disabled = "false" }) => {
         />
       </Grid>
       <Grid item xs={5.5}>
-        <DateTimePickerHelper
-          label="Start  Time"
-          format="YYYY-MM-DD HH:mm"
-          name={"startTime"}
+        <MuiTextField
+          label={"Start Time"}
+          name="startTime"
+          type="datetime-local"
+          size={"small"}
         />
       </Grid>
       <Grid item xs={5.5}>
-        <DateTimePickerHelper
-          label="End  Time"
-          format="YYYY-MM-DD HH:mm"
-          name={"endTime"}
+        <MuiTextField
+          label={"End Time"}
+          name="endTime"
+          type="datetime-local"
+          size={"small"}
         />
       </Grid>
       <Grid item xs={12}>

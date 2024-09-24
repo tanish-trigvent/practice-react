@@ -20,6 +20,7 @@ import { useSnackbar } from "components/Snackbar";
 import { useSelector } from "react-redux";
 import * as Yup from "yup";
 import { useLocation } from "react-router-dom";
+import dayjs from "dayjs";
 
 const Todo = () => {
   const userId = useSelector((state) => state?.userReducer?.user?._id);
@@ -47,11 +48,19 @@ const Todo = () => {
     title: Yup.string().required("Title is required"),
     status: Yup.string(),
     startTime: Yup.date()
-      .required("Start date is required")
-      .nullable("Start time is required")
-      .typeError("Invalid date format")
-      .min(new Date(), "Start date must be in the future"),
-    endTime: Yup.date().required("End Time is required"),
+      .required("Start time is required")
+      .nullable()
+      .test("isAfter", "You cannot select past dates", function (value) {
+        const yesterday = dayjs().subtract(1, "day");
+        return dayjs(value).isAfter(yesterday);
+      }),
+    endTime: Yup.date()
+      .required("End time is required")
+      .nullable()
+      .test("isAfter", "End time must be after start time", function (value) {
+        const { startTime } = this.parent;
+        return dayjs(value).isAfter(dayjs(startTime));
+      }),
     description: Yup.string().required("Description is required"),
   });
 
@@ -161,8 +170,8 @@ const Todo = () => {
     title: "",
     description: "",
     status: "todo",
-    startTime: "",
-    endTime: "",
+    startTime: dayjs().format("YYYY-MM-DDTHH:mm"),
+    endTime: dayjs().add(1, "hour").format("YYYY-MM-DDTHH:mm"),
   };
 
   // function to submit todo form
@@ -260,7 +269,7 @@ const Todo = () => {
         </Stack>
       }
     >
-      <DataGridTable columns={columns} rows={todo} getR />
+      <DataGridTable columns={columns} rows={todo} />
     </SubCard>
   );
 };

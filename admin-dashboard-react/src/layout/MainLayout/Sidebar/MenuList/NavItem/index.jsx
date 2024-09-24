@@ -66,7 +66,6 @@ const NavItem = ({ item, level }) => {
   // active menu item on page load
   useMemo(() => {
     const pathName = window.location.pathname;
-    console.log(pathName);
 
     const activeMenu = menuItems?.items?.filter(
       (item) => item.url === pathName

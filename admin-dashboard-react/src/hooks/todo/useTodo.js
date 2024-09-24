@@ -3,7 +3,6 @@ import { useMutation, useQuery } from "react-query";
 
 const useTodo = (userId, search = "") => {
   const { request } = useAuth();
-  console.log(userId);
 
   // Add todo
   const { mutateAsync: addTodo, isLoading: isAddingTodo } = useMutation(

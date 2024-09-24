@@ -37,7 +37,7 @@ const Security = () => {
 
   return (
     <Grid container>
-      <Grid item xs={7}>
+      <Grid item xs={12} md={7}>
         <SubCard title={<Typography variant="h5">Change Password</Typography>}>
           <FormContainer onSuccess={handleSubmit} validation={validationSchema}>
             <Stack spacing={2}>

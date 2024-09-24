@@ -31,7 +31,7 @@ const Profile = () => {
       showSnackbar(response.message, "success");
       dispatch(loggedInUser(response.userDetails));
     } catch (error) {
-      console.log(error.message);
+      showSnackbar(error.message, "error");
     }
   };
   const { getRootProps, getInputProps, open } = useDropzone({
