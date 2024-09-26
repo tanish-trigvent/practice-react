@@ -32,6 +32,7 @@ export const ModalProvider = ({ children }) => {
     defaultValue: {},
     isLoading: false,
     validation: {},
+    maxWidth: "sm",
   });
   const [isOpen, setIsOpen] = useState(false);
 
@@ -45,6 +46,7 @@ export const ModalProvider = ({ children }) => {
     defaultValue,
     isLoading,
     validation,
+    maxWidth,
   }) => {
     setDialogConfig({
       title,
@@ -56,6 +58,7 @@ export const ModalProvider = ({ children }) => {
       defaultValue,
       isLoading,
       validation,
+      maxWidth,
     });
     setIsOpen(true);
   };
@@ -65,7 +68,12 @@ export const ModalProvider = ({ children }) => {
   };
 
   const ModalComponent = () => (
-    <Dialog open={isOpen} onClose={closeModal} maxWidth={"sm"} fullWidth>
+    <Dialog
+      open={isOpen}
+      onClose={closeModal}
+      maxWidth={dialogConfig.maxWidth}
+      fullWidth
+    >
       <DialogTitle>
         <Stack direction={"row"} justifyContent={"space-between"}>
           {dialogConfig.title}

@@ -29,6 +29,22 @@ const MenuItems = [
     icon: icons?.IconListDetails,
     breadcrumbs: false,
   },
+  {
+    id: "4",
+    title: "Color Survey",
+    type: "item",
+    url: "/color-survey",
+    icon: icons?.IconListDetails,
+    breadcrumbs: false,
+  },
+  {
+    id: "5",
+    title: "Survey-Data",
+    type: "item",
+    url: "/color-combinations",
+    icon: icons?.IconListDetails,
+    breadcrumbs: false,
+  },
 ];
 
 export default MenuItems;

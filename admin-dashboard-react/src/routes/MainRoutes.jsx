@@ -6,6 +6,8 @@ import Loadable from "ui-component/Loadable";
 import PrivateRoute from "./PrivateRoutes";
 import AccountSetting from "views/pages/accountSetting";
 import AdminRoute from "./AdminRoute";
+import ColorCombination from "views/pages/color-combination";
+import ColorSurvey from "views/pages/color-survey";
 
 const DashboardDefault = Loadable(lazy(() => import("views/dashboard")));
 const Todo = Loadable(lazy(() => import("views/pages/Todo")));
@@ -44,6 +46,18 @@ const MainRoutes = {
     {
       path: "/account-settings",
       element: <AccountSetting />,
+    },
+    {
+      path: "/color-survey",
+      element: <ColorCombination />,
+    },
+    {
+      path: "color-combinations",
+      element: (
+        <AdminRoute>
+          <ColorSurvey />
+        </AdminRoute>
+      ),
     },
   ],
 };

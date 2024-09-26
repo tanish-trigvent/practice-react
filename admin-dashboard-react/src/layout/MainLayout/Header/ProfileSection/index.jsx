@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 // material-ui
@@ -37,6 +37,7 @@ const ProfileSection = () => {
   const theme = useTheme();
   const customization = useSelector((state) => state?.customization);
   const navigate = useNavigate();
+  const location = useLocation();
   const user = useSelector((state) => state?.userReducer?.user);
   const imageUrl = `http://localhost:5000/${user?.profilePhoto}`;
   const [selectedIndex, setSelectedIndex] = useState(-1);
@@ -72,6 +73,10 @@ const ProfileSection = () => {
 
   const prevOpen = useRef(open);
   useEffect(() => {
+    console.log(location.pathname);
+    setSelectedIndex(() =>
+      location.pathname !== "/account-settings" ? -1 : selectedIndex
+    );
     if (prevOpen.current === true && open === false) {
       anchorRef.current.focus();
     }
