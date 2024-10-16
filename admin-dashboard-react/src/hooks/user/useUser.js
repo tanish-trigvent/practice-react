@@ -18,14 +18,14 @@ export default function useUser(userId) {
 
   const { mutateAsync: userRegister } = useMutation(
     async (data) => {
-      const response = await request.post("/user", data);
+      const response = await request.post("/user-register", data);
       return response.data;
-    },
-    {
-      onSuccess: () => {
-        refetchUsers();
-      },
     }
+    // {
+    //   onSuccess: () => {
+    //     refetchUsers();
+    //   },
+    // }
   );
 
   //forgot password

@@ -10,10 +10,11 @@ import useUser from "hooks/user/useUser";
 import { useSnackbar } from "components/Snackbar";
 import { loggedInUser } from "../../../redux/user/userSlice";
 import { useDropzone } from "react-dropzone";
+const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
 const Profile = () => {
   const userDetails = useSelector((state) => state?.userReducer?.user);
-  const ImageUrl = `http://localhost:5000/${userDetails?.profilePhoto}`;
+  const ImageUrl = `${apiUrl}/${userDetails?.profilePhoto}`;
 
   const { showSnackbar } = useSnackbar();
   const { updateUser, isUpdatingUser, uploadPhoto } = useUser();

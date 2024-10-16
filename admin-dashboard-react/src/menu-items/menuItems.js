@@ -1,8 +1,13 @@
 // assets
-import { IconDashboard, IconUsers, IconListDetails } from "@tabler/icons-react";
+import {
+  IconDashboard,
+  IconUsers,
+  IconListDetails,
+  IconLayoutKanban,
+} from "@tabler/icons-react";
 
 // constant
-const icons = { IconDashboard, IconUsers, IconListDetails };
+const icons = { IconDashboard, IconUsers, IconListDetails, IconLayoutKanban };
 
 const MenuItems = [
   {
@@ -23,6 +28,14 @@ const MenuItems = [
   },
   {
     id: "3",
+    title: "Task Board",
+    type: "item",
+    url: "/task-board",
+    icon: icons?.IconLayoutKanban,
+    breadcrumbs: false,
+  },
+  {
+    id: "4",
     title: "Todo",
     type: "item",
     url: "/todo",
@@ -30,7 +43,7 @@ const MenuItems = [
     breadcrumbs: false,
   },
   {
-    id: "4",
+    id: "5",
     title: "Color Survey",
     type: "item",
     url: "/color-survey",
@@ -38,7 +51,7 @@ const MenuItems = [
     breadcrumbs: false,
   },
   {
-    id: "5",
+    id: "6",
     title: "Survey-Data",
     type: "item",
     url: "/color-combinations",

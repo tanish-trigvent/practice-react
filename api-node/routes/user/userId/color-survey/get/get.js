@@ -6,7 +6,6 @@ export default async (req, res) => {
     const user = await User.findOne({ _id: userId });
     if (user.role === "admin") {
       const colorCombinations = await ColorSurvey.find({}).populate("userId");
-      console.log(colorCombinations);
       res.send(colorCombinations);
     } else {
       res.status(403).send("Access denied");

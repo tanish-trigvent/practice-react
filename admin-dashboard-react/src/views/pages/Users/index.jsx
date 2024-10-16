@@ -15,8 +15,14 @@ import * as Yup from "yup";
 
 const Users = () => {
   const userId = useSelector((state) => state?.userReducer?.user?._id);
-  const { users, userRegister, updateUser, isUpdatingUser, deleteUser } =
-    useUser(userId);
+  const {
+    users,
+    userRegister,
+    updateUser,
+    isUpdatingUser,
+    deleteUser,
+    refetchUsers,
+  } = useUser(userId);
   const [rows, setRows] = useState([]);
   const { showModal, closeModal } = useModal();
   const { showSnackbar } = useSnackbar();
@@ -61,6 +67,7 @@ const Users = () => {
     try {
       response = await userRegister(values);
       showSnackbar(response.message, "success");
+      refetchUsers();
       closeModal();
     } catch (error) {
       const message = error?.response?.data;
@@ -73,6 +80,7 @@ const Users = () => {
     try {
       updateUser(values);
       showSnackbar("User updated successfully", "success");
+      refetchUsers();
       closeModal();
     } catch (error) {
       const message = error?.response?.data;
@@ -124,6 +132,7 @@ const Users = () => {
     try {
       const response = await deleteUser(values?._id);
       showSnackbar(response || response.message, "success");
+      refetchUsers();
       closeModal();
     } catch (error) {
       const message = error?.response?.data;

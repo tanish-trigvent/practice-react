@@ -1,12 +1,18 @@
-import { yupResolver } from '@hookform/resolvers/yup';
-import React from 'react';
-import { FormProvider, useForm } from 'react-hook-form';
+import { yupResolver } from "@hookform/resolvers/yup";
+import React from "react";
+import { FormProvider, useForm } from "react-hook-form";
 
 // eslint-disable-next-line react/prop-types
-function FormContainer({ FormProps, defaultValues = {}, validation, children, onSuccess = () => {} }) {
+function FormContainer({
+  FormProps,
+  defaultValues = {},
+  validation,
+  children,
+  onSuccess = () => {},
+}) {
   const methods = useForm({
     defaultValues,
-    ...(validation ? { resolver: yupResolver(validation) } : {})
+    ...(validation ? { resolver: yupResolver(validation) } : {}),
   });
 
   const { handleSubmit } = methods;

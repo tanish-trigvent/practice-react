@@ -35,6 +35,10 @@ const Login = () => {
   const submit = async (values) => {
     try {
       const data = await userLogin(values);
+      if (data?.status === 401) {
+        showSnackbar(data?.message, "error");
+        return;
+      }
       if (data) {
         localStorage.setItem("token", data.token);
         dispatch(loggedInUser(data?.data));

@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://localhost:3000/task-board -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style data-emotion="css" data-s="">.css-k008qs{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}</style><style data-emotion="css" data-s="">.css-r73eje-MuiAppBar-root{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:100%;box-sizing:border-box;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;position:fixed;z-index:1100;top:0;left:auto;right:0;color:inherit;background-color:#ffffff;-webkit-transition:width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}</style><style data-emotion="css" data-s="">@media print{.css-r73eje-MuiAppBar-root{position:absolute;}}</style><style data-emotion="css" data-s="">.css-1l8n1ui-MuiPaper-root-MuiAppBar-root{background-color:#ffffff;color:#364152;-webkit-transition:box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;box-shadow:none;background-image:none;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:100%;box-sizing:border-box;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;position:fixed;z-index:1100;top:0;left:auto;right:0;color:inherit;background-color:#ffffff;-webkit-transition:width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}</style><style data-emotion="css" data-s="">@media print{.css-1l8n1ui-MuiPaper-root-MuiAppBar-root{position:absolute;}}</style><style data-emotion="css" data-s="">.css-kvip5o-MuiToolbar-root{position:relative;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding-left:16px;padding-right:16px;min-height:48px;padding:16px;}</style><style data-emotion="css" data-s="">@media (min-width:600px){.css-kvip5o-MuiToolbar-root{padding-left:24px;padding-right:24px;}}</style><style data-emotion="css" data-s="">@media (min-width: 600px){.css-kvip5o-MuiToolbar-root{min-height:48px;}}</style><style data-emotion="css" data-s="">.css-x5zaxz{width:228px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}</style><style data-emotion="css" data-s="">@media (max-width:899.95px){.css-x5zaxz{width:auto;}}</style><style data-emotion="css" data-s="">.css-qpq9bu{-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;}</style><style data-emotion="css" data-s="">@media (min-width:0px){.css-qpq9bu{display:none;}}</style><style data-emotion="css" data-s="">@media (min-width:900px){.css-qpq9bu{display:block;}}</style><style data-emotion="css" data-s="">.css-10d1a0h-MuiButtonBase-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;}</style><style data-emotion="css" data-s="">.css-10d1a0h-MuiButtonBase-root::-moz-focus-inner{border-style:none;}</style><style data-emotion="css" data-s="">.css-10d1a0h-MuiButtonBase-root.Mui-disabled{pointer-events:none;cursor:default;}</style><style data-emotion="css" data-s="">@media print{.css-10d1a0h-MuiButtonBase-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}</style><style data-emotion="css" data-s="">.css-1q3wzvh-MuiButtonBase-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;border-radius:8px;overflow:hidden;}</style><style data-emotion="css" data-s="">.css-1q3wzvh-MuiButtonBase-root::-moz-focus-inner{border-style:none;}</style><style data-emotion="css" data-s="">.css-1q3wzvh-MuiButtonBase-root.Mui-disabled{pointer-events:none;cursor:default;}</style><style data-emotion="css" data-s="">@media print{.css-1q3wzvh-MuiButtonBase-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}</style><style data-emotion="css" data-s="">.css-2qo18f-MuiAvatar-root{position:relative;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;width:40px;height:40px;font-family:'Roboto',sans-serif;font-size:1.25rem;line-height:1;border-radius:50%;overflow:hidden;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;border-radius:4px;color:#ffffff;background-color:#bdbdbd;color:#1e88e5;background:#90caf9;cursor:pointer;border-radius:8px;width:34px;height:34px;font-size:1.2rem;-webkit-transition:all .2s ease-in-out;transition:all .2s ease-in-out;background:#ede7f6;color:#5e35b1;}</style><style data-emotion="css" data-s="">.css-2qo18f-MuiAvatar-root:hover{background:#5e35b1;color:#ede7f6;}</style><style data-emotion="css" data-s="">.css-d47f85{}</style><style data-emotion="css" data-s="">@media (min-width:0px){.css-d47f85{display:block;}}</style><style data-emotion="css" data-s="">@media (min-width:900px){.css-d47f85{display:none;}}</style><style data-emotion="css" data-s="">.css-d0uhtl{margin-left:16px;}</style><style data-emotion="css" data-s="">.css-ftx2p0-MuiAvatar-root{position:relative;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;width:40px;height:40px;font-family:'Roboto',sans-serif;font-size:1.25rem;line-height:1;border-radius:50%;overflow:hidden;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;border-radius:4px;color:#ffffff;background-color:#bdbdbd;color:#1e88e5;background:#90caf9;cursor:pointer;border-radius:8px;width:34px;height:34px;font-size:1.2rem;background-color:#ede7f6;color:#5e35b1;}</style><style data-emotion="css" data-s="">.css-ftx2p0-MuiAvatar-root:hover{background-color:#5e35b1;color:#ede7f6;}</style><style data-emotion="css" data-s="">.css-1x6fbzk-MuiPopper-root{z-index:1100;width:99%;top:-55px!important;}</style><style data-emotion="css" data-s="">@media (min-width:0px){.css-1x6fbzk-MuiPopper-root{padding-left:10px;padding-right:10px;}}</style><style data-emotion="css" data-s="">@media (min-width:600px){.css-1x6fbzk-MuiPopper-root{padding-left:12px;padding-right:12px;}}</style><style data-emotion="css" data-s="">.css-13tqxrv{}</style><style data-emotion="css" data-s="">@media (min-width:0px){.css-13tqxrv{display:none;}}</style><style data-emotion="css" data-s="">@media (min-width:900px){.css-13tqxrv{display:block;}}</style><style data-emotion="css" data-s="">.css-fk8hzm-MuiInputBase-root-MuiOutlinedInput-root{font-size:0.875rem;font-weight:400;line-height:1.4375em;font-family:'Roboto',sans-serif;color:#364152;box-sizing:border-box;position:relative;cursor:text;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:relative;border-radius:4px;padding-left:14px;padding-right:14px;background:#f8fafc;border-radius:12px;margin-left:16px;padding-left:16px;padding-right:16px;}</style><style data-emotion="css" data-s="">.css-fk8hzm-MuiInputBase-root-MuiOutlinedInput-root.Mui-disabled{color:rgba(0, 0, 0, 0.38);cursor:default;}</style><style data-emotion="css" data-s="">.css-fk8hzm-MuiInputBase-root-MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline{border-color:#364152;}</style><style data-emotion="css" data-s="">@media (hover: none){.css-fk8hzm-MuiInputBase-root-MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline{border-color:rgba(0, 0, 0, 0.23);}}</style><style data-emotion="css" data-s="">.css-fk8hzm-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline{border-color:#2196f3;border-width:2px;}</style><style data-emotion="css" data-s="">.css-fk8hzm-MuiInputBase-root-MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline{border-color:#f44336;}</style><style data-emotion="css" data-s="">.css-fk8hzm-MuiInputBase-root-MuiOutlinedInput-root.Mui-disabled .MuiOutlinedInput-notchedOutline{border-color:rgba(0, 0, 0, 0.26);}</style><style data-emotion="css" data-s="">.css-fk8hzm-MuiInputBase-root-MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline{}</style><style data-emotion="css" data-s="">.css-fk8hzm-MuiInputBase-root-MuiOutlinedInput-root:hover $notchedOutline{border-color:#eef2f6;}</style><style data-emotion="css" data-s="">.css-fk8hzm-MuiInputBase-root-MuiOutlinedInput-root.MuiInputBase-multiline{padding:1px;}</style><style data-emotion="css" data-s="">@media (min-width:900px){.css-fk8hzm-MuiInputBase-root-MuiOutlinedInput-root{width:250px;}}</style><style data-emotion="css" data-s="">@media (min-width:1200px){.css-fk8hzm-MuiInputBase-root-MuiOutlinedInput-root{width:434px;}}</style><style data-emotion="css" data-s="">.css-ittuaa-MuiInputAdornment-root{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;height:0.01em;max-height:2em;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;white-space:nowrap;color:rgba(0, 0, 0, 0.54);margin-right:8px;}</style><style data-emotion="css" data-s="">.css-1hssbde-MuiInputBase-input-MuiOutlinedInput-input{font:inherit;letter-spacing:inherit;color:currentColor;padding:4px 0 5px;border:0;box-sizing:content-box;background:none;height:1.4375em;margin:0;-webkit-tap-highlight-color:transparent;display:block;min-width:0;width:100%;-webkit-animation-name:mui-auto-fill-cancel;animation-name:mui-auto-fill-cancel;-webkit-animation-duration:10ms;animation-duration:10ms;color:#121926;padding:16.5px 14px;padding-left:0;padding-right:0;font-weight:500;background:#f8fafc;padding:15.5px 14px;border-radius:12px;padding-left:4px;background-color:transparent;padding-left:4px;}</style><style data-emotion="css" data-s="">.css-1hssbde-MuiInputBase-input-MuiOutlinedInput-input::-webkit-input-placeholder{color:currentColor;opacity:0.42;-webkit-transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}</style><style data-emotion="css" data-s="">.css-1hssbde-MuiInputBase-input-MuiOutlinedInput-input::-moz-placeholder{color:currentColor;opacity:0.42;-webkit-transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}</style><style data-emotion="css" data-s="">.css-1hssbde-MuiInputBase-input-MuiOutlinedInput-input:-ms-input-placeholder{color:currentColor;opacity:0.42;-webkit-transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}</style><style data-emotion="css" data-s="">.css-1hssbde-MuiInputBase-input-MuiOutlinedInput-input::-ms-input-placeholder{color:currentColor;opacity:0.42;-webkit-transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}</style><style data-emotion="css" data-s="">.css-1hssbde-MuiInputBase-input-MuiOutlinedInput-input:focus{outline:0;}</style><style data-emotion="css" data-s="">.css-1hssbde-MuiInputBase-input-MuiOutlinedInput-input:invalid{box-shadow:none;}</style><style data-emotion="css" data-s="">.css-1hssbde-MuiInputBase-input-MuiOutlinedInput-input::-webkit-search-decoration{-webkit-appearance:none;}</style><style data-emotion="css" data-s="">label[data-shrink=false]+.MuiInputBase-formControl .css-1hssbde-MuiInputBase-input-MuiOutlinedInput-input{}</style><style data-emotion="css" data-s="">label[data-shrink=false]+.MuiInputBase-formControl .css-1hssbde-MuiInputBase-input-MuiOutlinedInput-input::-webkit-input-placeholder{opacity:0!important;}</style><style data-emotion="css" data-s="">label[data-shrink=false]+.MuiInputBase-formControl .css-1hssbde-MuiInputBase-input-MuiOutlinedInput-input::-moz-placeholder{opacity:0!important;}</style><style data-emotion="css" data-s="">label[data-shrink=false]+.MuiInputBase-formControl .css-1hssbde-MuiInputBase-input-MuiOutlinedInput-input:-ms-input-placeholder{opacity:0!important;}</style><style data-emotion="css" data-s="">label[data-shrink=false]+.MuiInputBase-formControl .css-1hssbde-MuiInputBase-input-MuiOutlinedInput-input::-ms-input-placeholder{opacity:0!important;}</style><style data-emotion="css" data-s="">label[data-shrink=false]+.MuiInputBase-formControl .css-1hssbde-MuiInputBase-input-MuiOutlinedInput-input:focus::-webkit-input-placeholder{opacity:0.42;}</style><style data-emotion="css" data-s="">label[data-shrink=false]+.MuiInputBase-formControl .css-1hssbde-MuiInputBase-input-MuiOutlinedInput-input:focus::-moz-placeholder{opacity:0.42;}</style><style data-emotion="css" data-s="">label[data-shrink=false]+.MuiInputBase-formControl .css-1hssbde-MuiInputBase-input-MuiOutlinedInput-input:focus:-ms-input-placeholder{opacity:0.42;}</style><style data-emotion="css" data-s="">label[data-shrink=false]+.MuiInputBase-formControl .css-1hssbde-MuiInputBase-input-MuiOutlinedInput-input:focus::-ms-input-placeholder{opacity:0.42;}</style><style data-emotion="css" data-s="">.css-1hssbde-MuiInputBase-input-MuiOutlinedInput-input.Mui-disabled{opacity:1;-webkit-text-fill-color:rgba(0, 0, 0, 0.38);}</style><style data-emotion="css" data-s="">.css-1hssbde-MuiInputBase-input-MuiOutlinedInput-input:-webkit-autofill{-webkit-animation-duration:5000s;animation-duration:5000s;-webkit-animation-name:mui-auto-fill;animation-name:mui-auto-fill;}</style><style data-emotion="css" data-s="">.css-1hssbde-MuiInputBase-input-MuiOutlinedInput-input::-webkit-input-placeholder{color:#697586;font-size:0.875rem;}</style><style data-emotion="css" data-s="">.css-1hssbde-MuiInputBase-input-MuiOutlinedInput-input::-moz-placeholder{color:#697586;font-size:0.875rem;}</style><style data-emotion="css" data-s="">.css-1hssbde-MuiInputBase-input-MuiOutlinedInput-input:-ms-input-placeholder{color:#697586;font-size:0.875rem;}</style><style data-emotion="css" data-s="">.css-1hssbde-MuiInputBase-input-MuiOutlinedInput-input::placeholder{color:#697586;font-size:0.875rem;}</style><style data-emotion="css" data-s="">.css-1hssbde-MuiInputBase-input-MuiOutlinedInput-input:-webkit-autofill{border-radius:inherit;}</style><style data-emotion="css" data-s="">.css-1hssbde-MuiInputBase-input-MuiOutlinedInput-input:-webkit-autofill WebkitBoxShadow{}</style><style data-emotion="css" data-s="">.css-1hssbde-MuiInputBase-input-MuiOutlinedInput-input:-webkit-autofill WebkitTextFillColor{}</style><style data-emotion="css" data-s="">.css-1hssbde-MuiInputBase-input-MuiOutlinedInput-input:-webkit-autofill caretColor{}</style><style data-emotion="css" data-s="">.css-1hssbde-MuiInputBase-input-MuiOutlinedInput-input.MuiInputBase-inputSizeSmall{padding:10px 14px;}</style><style data-emotion="css" data-s="">.css-1hssbde-MuiInputBase-input-MuiOutlinedInput-input.MuiInputBase-inputSizeSmall.MuiInputBase-inputAdornedStart{padding-left:0;}</style><style data-emotion="css" data-s="">.css-1laqsz7-MuiInputAdornment-root{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;height:0.01em;max-height:2em;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;white-space:nowrap;color:rgba(0, 0, 0, 0.54);margin-left:8px;}</style><style data-emotion="css" data-s="">.css-1eif7vq-MuiOutlinedInput-notchedOutline{border-color:rgba(0, 0, 0, 0.23);border-radius:12px;}</style><style data-emotion="css" data-s="">.css-14qh0u1-MuiOutlinedInput-notchedOutline{text-align:left;position:absolute;bottom:0;right:0;top:-5px;left:0;margin:0;padding:0 8px;pointer-events:none;border-radius:inherit;border-style:solid;border-width:1px;overflow:hidden;min-width:0%;border-color:rgba(0, 0, 0, 0.23);border-radius:12px;}</style><style data-emotion="css" data-s="">.css-ihdtdm{float:unset;width:auto;overflow:hidden;padding:0;line-height:11px;-webkit-transition:width 150ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;transition:width 150ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;}</style><style data-emotion="css" data-s="">.css-i9gxme{-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;}</style><style data-emotion="css" data-s="">.css-qtwrbn-MuiChip-root{max-width:100%;font-family:'Roboto',sans-serif;font-size:0.8125rem;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;height:32px;color:#fff;background-color:#2196f3;border-radius:16px;white-space:nowrap;-webkit-transition:background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;cursor:unset;outline:0;-webkit-text-decoration:none;text-decoration:none;border:0;padding:0;vertical-align:middle;box-sizing:border-box;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;cursor:pointer;background-color:transparent;border:1px solid rgba(33, 150, 243, 0.7);color:#2196f3;height:48px;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;border-radius:27px;-webkit-transition:all .2s ease-in-out;transition:all .2s ease-in-out;border-color:#eef2f6;background-color:#eef2f6;}</style><style data-emotion="css" data-s="">.css-qtwrbn-MuiChip-root.Mui-disabled{opacity:0.38;pointer-events:none;}</style><style data-emotion="css" data-s="">.css-qtwrbn-MuiChip-root .MuiChip-avatar{margin-left:5px;margin-right:-6px;width:24px;height:24px;color:#364152;font-size:0.75rem;}</style><style data-emotion="css" data-s="">.css-qtwrbn-MuiChip-root .MuiChip-avatarColorPrimary{color:#fff;background-color:#1e88e5;}</style><style data-emotion="css" data-s="">.css-qtwrbn-MuiChip-root .MuiChip-avatarColorSecondary{color:#fff;background-color:#5e35b1;}</style><style data-emotion="css" data-s="">.css-qtwrbn-MuiChip-root .MuiChip-avatarSmall{margin-left:4px;margin-right:-4px;width:18px;height:18px;font-size:0.625rem;}</style><style data-emotion="css" data-s="">.css-qtwrbn-MuiChip-root .MuiChip-icon{margin-left:5px;margin-right:-6px;}</style><style data-emotion="css" data-s="">.css-qtwrbn-MuiChip-root .MuiChip-deleteIcon{-webkit-tap-highlight-color:transparent;color:rgba(255, 255, 255, 0.7);font-size:22px;cursor:pointer;margin:0 5px 0 -6px;}</style><style data-emotion="css" data-s="">.css-qtwrbn-MuiChip-root .MuiChip-deleteIcon:hover{color:rgba(54, 65, 82, 0.4);}</style><style data-emotion="css" data-s="">.css-qtwrbn-MuiChip-root .MuiChip-deleteIcon:hover,.css-qtwrbn-MuiChip-root .MuiChip-deleteIcon:active{color:#fff;}</style><style data-emotion="css" data-s="">.css-qtwrbn-MuiChip-root:hover{background-color:rgba(0, 0, 0, 0.12);}</style><style data-emotion="css" data-s="">.css-qtwrbn-MuiChip-root.Mui-focusVisible{background-color:rgba(0, 0, 0, 0.2);}</style><style data-emotion="css" data-s="">.css-qtwrbn-MuiChip-root:active{box-shadow:0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);}</style><style data-emotion="css" data-s="">.css-qtwrbn-MuiChip-root:hover,.css-qtwrbn-MuiChip-root.Mui-focusVisible{background-color:#1e88e5;}</style><style data-emotion="css" data-s="">.css-qtwrbn-MuiChip-root.MuiChip-clickable:hover{background-color:rgba(33, 150, 243, 0.04);}</style><style data-emotion="css" data-s="">.css-qtwrbn-MuiChip-root.Mui-focusVisible{background-color:rgba(33, 150, 243, 0.12);}</style><style data-emotion="css" data-s="">.css-qtwrbn-MuiChip-root .MuiChip-avatar{margin-left:4px;}</style><style data-emotion="css" data-s="">.css-qtwrbn-MuiChip-root .MuiChip-avatarSmall{margin-left:2px;}</style><style data-emotion="css" data-s="">.css-qtwrbn-MuiChip-root .MuiChip-icon{margin-left:4px;}</style><style data-emotion="css" data-s="">.css-qtwrbn-MuiChip-root .MuiChip-iconSmall{margin-left:2px;}</style><style data-emotion="css" data-s="">.css-qtwrbn-MuiChip-root .MuiChip-deleteIcon{color:rgba(33, 150, 243, 0.7);}</style><style data-emotion="css" data-s="">.css-qtwrbn-MuiChip-root .MuiChip-deleteIcon:hover,.css-qtwrbn-MuiChip-root .MuiChip-deleteIcon:active{color:#2196f3;}</style><style data-emotion="css" data-s="">.css-qtwrbn-MuiChip-root .MuiChip-deleteIconSmall{margin-right:3px;}</style><style data-emotion="css" data-s="">.css-qtwrbn-MuiChip-root.MuiChip-deletable .MuiChip-deleteIcon{color:inherit;}</style><style data-emotion="css" data-s="">.css-qtwrbn-MuiChip-root[aria-controls="menu-list-grow"],.css-qtwrbn-MuiChip-root:hover{border-color:#2196f3;background:#2196f3!important;color:#eef2f6;}</style><style data-emotion="css" data-s="">.css-qtwrbn-MuiChip-root[aria-controls="menu-list-grow"] svg,.css-qtwrbn-MuiChip-root:hover svg{stroke:#eef2f6;}</style><style data-emotion="css" data-s="">.css-qtwrbn-MuiChip-root .MuiChip-label{line-height:0;}</style><style data-emotion="css" data-s="">.css-11gwode-MuiButtonBase-root-MuiChip-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;max-width:100%;font-family:'Roboto',sans-serif;font-size:0.8125rem;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;height:32px;color:#fff;background-color:#2196f3;border-radius:16px;white-space:nowrap;-webkit-transition:background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;cursor:unset;outline:0;-webkit-text-decoration:none;text-decoration:none;border:0;padding:0;vertical-align:middle;box-sizing:border-box;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;cursor:pointer;background-color:transparent;border:1px solid rgba(33, 150, 243, 0.7);color:#2196f3;height:48px;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;border-radius:27px;-webkit-transition:all .2s ease-in-out;transition:all .2s ease-in-out;border-color:#eef2f6;background-color:#eef2f6;}</style><style data-emotion="css" data-s="">.css-11gwode-MuiButtonBase-root-MuiChip-root::-moz-focus-inner{border-style:none;}</style><style data-emotion="css" data-s="">.css-11gwode-MuiButtonBase-root-MuiChip-root.Mui-disabled{pointer-events:none;cursor:default;}</style><style data-emotion="css" data-s="">@media print{.css-11gwode-MuiButtonBase-root-MuiChip-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}</style><style data-emotion="css" data-s="">.css-11gwode-MuiButtonBase-root-MuiChip-root.Mui-disabled{opacity:0.38;pointer-events:none;}</style><style data-emotion="css" data-s="">.css-11gwode-MuiButtonBase-root-MuiChip-root .MuiChip-avatar{margin-left:5px;margin-right:-6px;width:24px;height:24px;color:#364152;font-size:0.75rem;}</style><style data-emotion="css" data-s="">.css-11gwode-MuiButtonBase-root-MuiChip-root .MuiChip-avatarColorPrimary{color:#fff;background-color:#1e88e5;}</style><style data-emotion="css" data-s="">.css-11gwode-MuiButtonBase-root-MuiChip-root .MuiChip-avatarColorSecondary{color:#fff;background-color:#5e35b1;}</style><style data-emotion="css" data-s="">.css-11gwode-MuiButtonBase-root-MuiChip-root .MuiChip-avatarSmall{margin-left:4px;margin-right:-4px;width:18px;height:18px;font-size:0.625rem;}</style><style data-emotion="css" data-s="">.css-11gwode-MuiButtonBase-root-MuiChip-root .MuiChip-icon{margin-left:5px;margin-right:-6px;}</style><style data-emotion="css" data-s="">.css-11gwode-MuiButtonBase-root-MuiChip-root .MuiChip-deleteIcon{-webkit-tap-highlight-color:transparent;color:rgba(255, 255, 255, 0.7);font-size:22px;cursor:pointer;margin:0 5px 0 -6px;}</style><style data-emotion="css" data-s="">.css-11gwode-MuiButtonBase-root-MuiChip-root .MuiChip-deleteIcon:hover{color:rgba(54, 65, 82, 0.4);}</style><style data-emotion="css" data-s="">.css-11gwode-MuiButtonBase-root-MuiChip-root .MuiChip-deleteIcon:hover,.css-11gwode-MuiButtonBase-root-MuiChip-root .MuiChip-deleteIcon:active{color:#fff;}</style><style data-emotion="css" data-s="">.css-11gwode-MuiButtonBase-root-MuiChip-root:hover{background-color:rgba(0, 0, 0, 0.12);}</style><style data-emotion="css" data-s="">.css-11gwode-MuiButtonBase-root-MuiChip-root.Mui-focusVisible{background-color:rgba(0, 0, 0, 0.2);}</style><style data-emotion="css" data-s="">.css-11gwode-MuiButtonBase-root-MuiChip-root:active{box-shadow:0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);}</style><style data-emotion="css" data-s="">.css-11gwode-MuiButtonBase-root-MuiChip-root:hover,.css-11gwode-MuiButtonBase-root-MuiChip-root.Mui-focusVisible{background-color:#1e88e5;}</style><style data-emotion="css" data-s="">.css-11gwode-MuiButtonBase-root-MuiChip-root.MuiChip-clickable:hover{background-color:rgba(33, 150, 243, 0.04);}</style><style data-emotion="css" data-s="">.css-11gwode-MuiButtonBase-root-MuiChip-root.Mui-focusVisible{background-color:rgba(33, 150, 243, 0.12);}</style><style data-emotion="css" data-s="">.css-11gwode-MuiButtonBase-root-MuiChip-root .MuiChip-avatar{margin-left:4px;}</style><style data-emotion="css" data-s="">.css-11gwode-MuiButtonBase-root-MuiChip-root .MuiChip-avatarSmall{margin-left:2px;}</style><style data-emotion="css" data-s="">.css-11gwode-MuiButtonBase-root-MuiChip-root .MuiChip-icon{margin-left:4px;}</style><style data-emotion="css" data-s="">.css-11gwode-MuiButtonBase-root-MuiChip-root .MuiChip-iconSmall{margin-left:2px;}</style><style data-emotion="css" data-s="">.css-11gwode-MuiButtonBase-root-MuiChip-root .MuiChip-deleteIcon{color:rgba(33, 150, 243, 0.7);}</style><style data-emotion="css" data-s="">.css-11gwode-MuiButtonBase-root-MuiChip-root .MuiChip-deleteIcon:hover,.css-11gwode-MuiButtonBase-root-MuiChip-root .MuiChip-deleteIcon:active{color:#2196f3;}</style><style data-emotion="css" data-s="">.css-11gwode-MuiButtonBase-root-MuiChip-root .MuiChip-deleteIconSmall{margin-right:3px;}</style><style data-emotion="css" data-s="">.css-11gwode-MuiButtonBase-root-MuiChip-root.MuiChip-deletable .MuiChip-deleteIcon{color:inherit;}</style><style data-emotion="css" data-s="">.css-11gwode-MuiButtonBase-root-MuiChip-root[aria-controls="menu-list-grow"],.css-11gwode-MuiButtonBase-root-MuiChip-root:hover{border-color:#2196f3;background:#2196f3!important;color:#eef2f6;}</style><style data-emotion="css" data-s="">.css-11gwode-MuiButtonBase-root-MuiChip-root[aria-controls="menu-list-grow"] svg,.css-11gwode-MuiButtonBase-root-MuiChip-root:hover svg{stroke:#eef2f6;}</style><style data-emotion="css" data-s="">.css-11gwode-MuiButtonBase-root-MuiChip-root .MuiChip-label{line-height:0;}</style><style data-emotion="css" data-s="">.css-1p7lbj2-MuiAvatar-root{position:relative;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;width:40px;height:40px;font-family:'Roboto',sans-serif;font-size:1.25rem;line-height:1;border-radius:50%;overflow:hidden;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;color:#1e88e5;background:#90caf9;width:34px;height:34px;font-size:1.2rem;margin:8px 0 8px 8px!important;cursor:pointer;}</style><style data-emotion="css" data-s="">.css-1pqm26d-MuiAvatar-img{width:100%;height:100%;text-align:center;object-fit:cover;color:transparent;text-indent:10000px;}</style><style data-emotion="css" data-s="">.css-1ig3q7n-MuiChip-label{overflow:hidden;text-overflow:ellipsis;padding-left:11px;padding-right:11px;white-space:nowrap;}</style><style data-emotion="css" data-s="">.css-advny6-MuiPopper-root{}</style><style data-emotion="css" data-s="">.css-18lef68{width:auto;}</style><style data-emotion="css" data-s="">@media (min-width:900px){.css-18lef68{-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;}}</style><style data-emotion="css" data-s="">.css-145eqf-MuiDrawer-root{z-index:1200;}</style><style data-emotion="css" data-s="">.css-145eqf-MuiDrawer-root .MuiDrawer-paper{width:260px;background:#ffffff;color:#364152;border-right:none;}</style><style data-emotion="css" data-s="">@media (min-width:900px){.css-145eqf-MuiDrawer-root .MuiDrawer-paper{top:88px;}}</style><style data-emotion="css" data-s="">.css-9d4wr9{background-color:#eef2f6;width:100%;min-height:calc(100vh - 88px);-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;padding:20px;margin-top:88px;margin-right:20px;border-radius:12px;border-bottom-left-radius:0;border-bottom-right-radius:0;-webkit-transition:margin 225ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;transition:margin 225ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;}</style><style data-emotion="css" data-s="">@media (min-width:900px){.css-9d4wr9{margin-left:0;width:calc(100% - 260px);}}</style><style data-emotion="css" data-s="">@media (max-width:899.95px){.css-9d4wr9{margin-left:20px;width:calc(100% - 260px);padding:16px;}}</style><style data-emotion="css" data-s="">@media (max-width:599.95px){.css-9d4wr9{margin-left:10px;width:calc(100% - 260px);padding:16px;margin-right:10px;}}</style><style data-emotion="css" data-s="">.css-102lq7w-MuiTypography-root{margin:0;font-size:0.875rem;font-weight:400;line-height:1.334em;font-family:'Roboto',sans-serif;}</style><style data-emotion="css" data-s="">.css-5pku9q-MuiCard-root{overflow:hidden;border:1px solid;border-color:rgba(0, 0, 0, 0.12);}</style><style data-emotion="css" data-s="">.css-5pku9q-MuiCard-root:hover{box-shadow:0 2px 14px 0 rgb(32 40 45 / 8%);}</style><style data-emotion="css" data-s="">.css-1ooduvz-MuiPaper-root-MuiCard-root{background-color:#ffffff;color:#364152;-webkit-transition:box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;border-radius:4px;box-shadow:none;background-image:none;border-radius:12px;overflow:hidden;border:1px solid;border-color:rgba(0, 0, 0, 0.12);}</style><style data-emotion="css" data-s="">.css-1ooduvz-MuiPaper-root-MuiCard-root:hover{box-shadow:0 2px 14px 0 rgb(32 40 45 / 8%);}</style><style data-emotion="css" data-s="">.css-1ibcbem-MuiCardHeader-root{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:16px;padding:24px;padding:20px;}</style><style data-emotion="css" data-s="">.css-1ibcbem-MuiCardHeader-root .MuiCardHeader-title{font-size:1.125rem;}</style><style data-emotion="css" data-s="">.css-1qbkelo-MuiCardHeader-content{-webkit-flex:1 1 auto;-ms-flex:1 1 auto;flex:1 1 auto;}</style><style data-emotion="css" data-s="">.css-1w9i8cz-MuiTypography-root{margin:0;font-size:0.875rem;color:#121926;font-weight:500;font-family:'Roboto',sans-serif;line-height:1.334;}</style><style data-emotion="css" data-s="">.css-nbr19s-MuiDivider-root{margin:0;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;border-width:0;border-style:solid;border-color:rgba(0, 0, 0, 0.12);border-bottom-width:thin;border-color:#e3e8ef;opacity:1;}</style><style data-emotion="css" data-s="">.css-ngmjm5-MuiCardContent-root{padding:16px;padding:24px;padding:20px;}</style><style data-emotion="css" data-s="">.css-ngmjm5-MuiCardContent-root:last-child{padding-bottom:24px;}</style><style data-emotion="css" data-s="">.css-1v8x7dw{overflow:auto;}</style><style data-emotion="css" data-s="">.css-4zz169-MuiStack-root{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;overflow:auto;width:100vw;}</style><style data-emotion="css" data-s="">.css-pmz6lz-MuiModal-root-MuiDrawer-root{position:fixed;z-index:1300;right:0;bottom:0;top:0;left:0;visibility:hidden;z-index:1200;}</style><style data-emotion="css" data-s="">.css-pmz6lz-MuiModal-root-MuiDrawer-root .MuiDrawer-paper{width:260px;background:#ffffff;color:#364152;border-right:none;}</style><style data-emotion="css" data-s="">@media (min-width:900px){.css-pmz6lz-MuiModal-root-MuiDrawer-root .MuiDrawer-paper{top:88px;}}</style><style data-emotion="css" data-s="">.css-1rfr5hw-MuiModal-backdrop{z-index:-1;}</style><style data-emotion="css" data-s="">.css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop{position:fixed;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;right:0;bottom:0;top:0;left:0;background-color:rgba(0, 0, 0, 0.5);-webkit-tap-highlight-color:transparent;z-index:-1;}</style><style data-emotion="css" data-s="">.css-1gn8lvr-MuiDrawer-paper{overflow-y:auto;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;height:100%;-webkit-flex:1 0 auto;-ms-flex:1 0 auto;flex:1 0 auto;z-index:1200;-webkit-overflow-scrolling:touch;position:fixed;top:0;outline:0;left:0;}</style><style data-emotion="css" data-s="">.css-1kfcl52-MuiPaper-root-MuiDrawer-paper{background-color:#ffffff;color:#364152;-webkit-transition:box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;box-shadow:0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12);background-image:none;overflow-y:auto;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;height:100%;-webkit-flex:1 0 auto;-ms-flex:1 0 auto;flex:1 0 auto;z-index:1200;-webkit-overflow-scrolling:touch;position:fixed;top:0;outline:0;left:0;}</style><style data-emotion="css" data-s="">.css-n4mf1r{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding:16px;margin-left:auto;margin-right:auto;}</style><style data-emotion="css" data-s="">.css-1rhindc-MuiListItemButton-root{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:relative;-webkit-text-decoration:none;text-decoration:none;min-width:0;box-sizing:border-box;text-align:left;padding-top:8px;padding-bottom:8px;-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;padding-left:16px;padding-right:16px;color:#364152;padding-top:10px;padding-bottom:10px;border-radius:12px;margin-bottom:4px;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;background-color:inherit;padding-top:10px;padding-bottom:10px;padding-left:NaNpx;}</style><style data-emotion="css" data-s="">.css-1rhindc-MuiListItemButton-root:hover{-webkit-text-decoration:none;text-decoration:none;background-color:rgba(0, 0, 0, 0.04);}</style><style data-emotion="css" data-s="">@media (hover: none){.css-1rhindc-MuiListItemButton-root:hover{background-color:transparent;}}</style><style data-emotion="css" data-s="">.css-1rhindc-MuiListItemButton-root.Mui-selected{background-color:rgba(33, 150, 243, 0.08);}</style><style data-emotion="css" data-s="">.css-1rhindc-MuiListItemButton-root.Mui-selected.Mui-focusVisible{background-color:rgba(33, 150, 243, 0.2);}</style><style data-emotion="css" data-s="">.css-1rhindc-MuiListItemButton-root.Mui-selected:hover{background-color:rgba(33, 150, 243, 0.12);}</style><style data-emotion="css" data-s="">@media (hover: none){.css-1rhindc-MuiListItemButton-root.Mui-selected:hover{background-color:rgba(33, 150, 243, 0.08);}}</style><style data-emotion="css" data-s="">.css-1rhindc-MuiListItemButton-root.Mui-focusVisible{background-color:rgba(0, 0, 0, 0.12);}</style><style data-emotion="css" data-s="">.css-1rhindc-MuiListItemButton-root.Mui-disabled{opacity:0.38;}</style><style data-emotion="css" data-s="">.css-1rhindc-MuiListItemButton-root.Mui-selected{color:#5e35b1;background-color:#ede7f6;}</style><style data-emotion="css" data-s="">.css-1rhindc-MuiListItemButton-root.Mui-selected:hover{background-color:#ede7f6;}</style><style data-emotion="css" data-s="">.css-1rhindc-MuiListItemButton-root.Mui-selected .MuiListItemIcon-root{color:#5e35b1;}</style><style data-emotion="css" data-s="">.css-1rhindc-MuiListItemButton-root:hover{background-color:#ede7f6;color:#5e35b1;}</style><style data-emotion="css" data-s="">.css-1rhindc-MuiListItemButton-root:hover .MuiListItemIcon-root{color:#5e35b1;}</style><style data-emotion="css" data-s="">.css-zktnwd-MuiButtonBase-root-MuiListItemButton-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:relative;-webkit-text-decoration:none;text-decoration:none;min-width:0;box-sizing:border-box;text-align:left;padding-top:8px;padding-bottom:8px;-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;padding-left:16px;padding-right:16px;color:#364152;padding-top:10px;padding-bottom:10px;border-radius:12px;margin-bottom:4px;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;background-color:inherit;padding-top:10px;padding-bottom:10px;padding-left:NaNpx;}</style><style data-emotion="css" data-s="">.css-zktnwd-MuiButtonBase-root-MuiListItemButton-root::-moz-focus-inner{border-style:none;}</style><style data-emotion="css" data-s="">.css-zktnwd-MuiButtonBase-root-MuiListItemButton-root.Mui-disabled{pointer-events:none;cursor:default;}</style><style data-emotion="css" data-s="">@media print{.css-zktnwd-MuiButtonBase-root-MuiListItemButton-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}</style><style data-emotion="css" data-s="">.css-zktnwd-MuiButtonBase-root-MuiListItemButton-root:hover{-webkit-text-decoration:none;text-decoration:none;background-color:rgba(0, 0, 0, 0.04);}</style><style data-emotion="css" data-s="">@media (hover: none){.css-zktnwd-MuiButtonBase-root-MuiListItemButton-root:hover{background-color:transparent;}}</style><style data-emotion="css" data-s="">.css-zktnwd-MuiButtonBase-root-MuiListItemButton-root.Mui-selected{background-color:rgba(33, 150, 243, 0.08);}</style><style data-emotion="css" data-s="">.css-zktnwd-MuiButtonBase-root-MuiListItemButton-root.Mui-selected.Mui-focusVisible{background-color:rgba(33, 150, 243, 0.2);}</style><style data-emotion="css" data-s="">.css-zktnwd-MuiButtonBase-root-MuiListItemButton-root.Mui-selected:hover{background-color:rgba(33, 150, 243, 0.12);}</style><style data-emotion="css" data-s="">@media (hover: none){.css-zktnwd-MuiButtonBase-root-MuiListItemButton-root.Mui-selected:hover{background-color:rgba(33, 150, 243, 0.08);}}</style><style data-emotion="css" data-s="">.css-zktnwd-MuiButtonBase-root-MuiListItemButton-root.Mui-focusVisible{background-color:rgba(0, 0, 0, 0.12);}</style><style data-emotion="css" data-s="">.css-zktnwd-MuiButtonBase-root-MuiListItemButton-root.Mui-disabled{opacity:0.38;}</style><style data-emotion="css" data-s="">.css-zktnwd-MuiButtonBase-root-MuiListItemButton-root.Mui-selected{color:#5e35b1;background-color:#ede7f6;}</style><style data-emotion="css" data-s="">.css-zktnwd-MuiButtonBase-root-MuiListItemButton-root.Mui-selected:hover{background-color:#ede7f6;}</style><style data-emotion="css" data-s="">.css-zktnwd-MuiButtonBase-root-MuiListItemButton-root.Mui-selected .MuiListItemIcon-root{color:#5e35b1;}</style><style data-emotion="css" data-s="">.css-zktnwd-MuiButtonBase-root-MuiListItemButton-root:hover{background-color:#ede7f6;color:#5e35b1;}</style><style data-emotion="css" data-s="">.css-zktnwd-MuiButtonBase-root-MuiListItemButton-root:hover .MuiListItemIcon-root{color:#5e35b1;}</style><style data-emotion="css" data-s="">.css-1ips9rb-MuiListItemIcon-root{min-width:56px;color:rgba(0, 0, 0, 0.54);-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;color:#364152;min-width:36px;margin-top:auto;margin-bottom:auto;min-width:36px;}</style><style data-emotion="css" data-s="">.css-1j7nhag-MuiListItemText-root{-webkit-flex:1 1 auto;-ms-flex:1 1 auto;flex:1 1 auto;min-width:0;margin-top:4px;margin-bottom:4px;}</style><style data-emotion="css" data-s="">.css-1j7nhag-MuiListItemText-root .MuiListItemText-primary{color:#121926;}</style><style data-emotion="css" data-s="">.css-1ighx87-MuiTypography-root{margin:0;font-size:0.875rem;color:#121926;font-weight:500;font-family:'Roboto',sans-serif;line-height:1.334;color:inherit;}</style><style data-emotion="css" data-s="">.css-19u81b4-MuiTypography-root{margin:0;font-size:0.875rem;font-weight:400;line-height:1.334em;font-family:'Roboto',sans-serif;color:inherit;}</style><style data-emotion="css" data-s="">.css-f9dckj-MuiStack-root{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;margin-bottom:16px;}</style><style data-emotion="css" data-s="">.css-1slx32v-MuiChip-root{max-width:100%;font-family:'Roboto',sans-serif;font-size:0.8125rem;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;height:24px;color:#364152;background-color:rgba(0, 0, 0, 0.08);border-radius:16px;white-space:nowrap;-webkit-transition:background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;cursor:unset;outline:0;-webkit-text-decoration:none;text-decoration:none;border:0;padding:0;vertical-align:middle;box-sizing:border-box;color:#697586;background-color:#f8fafc;cursor:pointer;}</style><style data-emotion="css" data-s="">.css-1slx32v-MuiChip-root.Mui-disabled{opacity:0.38;pointer-events:none;}</style><style data-emotion="css" data-s="">.css-1slx32v-MuiChip-root .MuiChip-avatar{margin-left:5px;margin-right:-6px;width:24px;height:24px;color:#364152;font-size:0.75rem;}</style><style data-emotion="css" data-s="">.css-1slx32v-MuiChip-root .MuiChip-avatarColorPrimary{color:#fff;background-color:#1e88e5;}</style><style data-emotion="css" data-s="">.css-1slx32v-MuiChip-root .MuiChip-avatarColorSecondary{color:#fff;background-color:#5e35b1;}</style><style data-emotion="css" data-s="">.css-1slx32v-MuiChip-root .MuiChip-avatarSmall{margin-left:4px;margin-right:-4px;width:18px;height:18px;font-size:0.625rem;}</style><style data-emotion="css" data-s="">.css-1slx32v-MuiChip-root .MuiChip-icon{margin-left:4px;margin-right:-4px;font-size:18px;color:#364152;}</style><style data-emotion="css" data-s="">.css-1slx32v-MuiChip-root .MuiChip-deleteIcon{-webkit-tap-highlight-color:transparent;color:rgba(54, 65, 82, 0.26);font-size:16px;cursor:pointer;margin:0 5px 0 -6px;margin-right:4px;margin-left:-4px;}</style><style data-emotion="css" data-s="">.css-1slx32v-MuiChip-root .MuiChip-deleteIcon:hover{color:rgba(54, 65, 82, 0.4);}</style><style data-emotion="css" data-s="">.css-1slx32v-MuiChip-root.MuiChip-deletable .MuiChip-deleteIcon{color:inherit;}</style><style data-emotion="css" data-s="">.css-1slx32v-MuiChip-root:hover{color:#697586;background-color:#f8fafc;}</style><style data-emotion="css" data-s="">.css-t3ycia-MuiChip-label{overflow:hidden;text-overflow:ellipsis;padding-left:8px;padding-right:8px;white-space:nowrap;}</style><style data-emotion="css" data-s="">.css-8je8zh-MuiTouchRipple-root{overflow:hidden;pointer-events:none;position:absolute;z-index:0;top:0;right:0;bottom:0;left:0;border-radius:inherit;}</style>
+  <script type="module">
+import RefreshRuntime from "/@react-refresh"
+RefreshRuntime.injectIntoGlobalHook(window)
+window.$RefreshReg$ = () => {}
+window.$RefreshSig$ = () => (type) => type
+window.__vite_plugin_react_preamble_installed__ = true
+</script>
+
+  <script type="module" src="./Dashboard_files/client"></script>
+
+  <title>Dashboard</title>
+  <link rel="icon" href="http://localhost:3000/favicon.svg">
+  <!-- Meta Tags-->
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2296f3">
+  <meta name="title" content="Berry - React Material Admin Dashboard Template by CodedThemes">
+  <meta name="description" content="Start your next React project with Berry admin template. It build with Reactjs, Material-UI, Redux, and Hook for faster web development.">
+  <meta name="keywords" content="react admin template, material-ui react dashboard template, reactjs admin template, reactjs dashboard, react backend template">
+  <meta name="author" content="CodedThemes">
+<style type="text/css" data-vite-dev-id="D:/Tanish/practice/admin-dashboard-react/src/assets/scss/_themes-vars.module.scss"></style><style type="text/css" data-vite-dev-id="D:/Tanish/practice/admin-dashboard-react/node_modules/@fontsource/roboto/400.css">/* roboto-cyrillic-ext-400-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-400-normal.woff2) format('woff2'), url(/node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-400-normal.woff) format('woff');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+}
+
+/* roboto-cyrillic-400-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/node_modules/@fontsource/roboto/files/roboto-cyrillic-400-normal.woff2) format('woff2'), url(/node_modules/@fontsource/roboto/files/roboto-cyrillic-400-normal.woff) format('woff');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+
+/* roboto-greek-ext-400-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/node_modules/@fontsource/roboto/files/roboto-greek-ext-400-normal.woff2) format('woff2'), url(/node_modules/@fontsource/roboto/files/roboto-greek-ext-400-normal.woff) format('woff');
+  unicode-range: U+1F00-1FFF;
+}
+
+/* roboto-greek-400-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/node_modules/@fontsource/roboto/files/roboto-greek-400-normal.woff2) format('woff2'), url(/node_modules/@fontsource/roboto/files/roboto-greek-400-normal.woff) format('woff');
+  unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;
+}
+
+/* roboto-vietnamese-400-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/node_modules/@fontsource/roboto/files/roboto-vietnamese-400-normal.woff2) format('woff2'), url(/node_modules/@fontsource/roboto/files/roboto-vietnamese-400-normal.woff) format('woff');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;
+}
+
+/* roboto-latin-ext-400-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/node_modules/@fontsource/roboto/files/roboto-latin-ext-400-normal.woff2) format('woff2'), url(/node_modules/@fontsource/roboto/files/roboto-latin-ext-400-normal.woff) format('woff');
+  unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+/* roboto-latin-400-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/node_modules/@fontsource/roboto/files/roboto-latin-400-normal.woff2) format('woff2'), url(/node_modules/@fontsource/roboto/files/roboto-latin-400-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}</style><style type="text/css" data-vite-dev-id="D:/Tanish/practice/admin-dashboard-react/node_modules/@fontsource/roboto/500.css">/* roboto-cyrillic-ext-500-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-500-normal.woff2) format('woff2'), url(/node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-500-normal.woff) format('woff');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+}
+
+/* roboto-cyrillic-500-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/node_modules/@fontsource/roboto/files/roboto-cyrillic-500-normal.woff2) format('woff2'), url(/node_modules/@fontsource/roboto/files/roboto-cyrillic-500-normal.woff) format('woff');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+
+/* roboto-greek-ext-500-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/node_modules/@fontsource/roboto/files/roboto-greek-ext-500-normal.woff2) format('woff2'), url(/node_modules/@fontsource/roboto/files/roboto-greek-ext-500-normal.woff) format('woff');
+  unicode-range: U+1F00-1FFF;
+}
+
+/* roboto-greek-500-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/node_modules/@fontsource/roboto/files/roboto-greek-500-normal.woff2) format('woff2'), url(/node_modules/@fontsource/roboto/files/roboto-greek-500-normal.woff) format('woff');
+  unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;
+}
+
+/* roboto-vietnamese-500-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/node_modules/@fontsource/roboto/files/roboto-vietnamese-500-normal.woff2) format('woff2'), url(/node_modules/@fontsource/roboto/files/roboto-vietnamese-500-normal.woff) format('woff');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;
+}
+
+/* roboto-latin-ext-500-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/node_modules/@fontsource/roboto/files/roboto-latin-ext-500-normal.woff2) format('woff2'), url(/node_modules/@fontsource/roboto/files/roboto-latin-ext-500-normal.woff) format('woff');
+  unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+/* roboto-latin-500-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/node_modules/@fontsource/roboto/files/roboto-latin-500-normal.woff2) format('woff2'), url(/node_modules/@fontsource/roboto/files/roboto-latin-500-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}</style><style type="text/css" data-vite-dev-id="D:/Tanish/practice/admin-dashboard-react/node_modules/@fontsource/roboto/300.css">/* roboto-cyrillic-ext-300-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(/node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-300-normal.woff2) format('woff2'), url(/node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-300-normal.woff) format('woff');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+}
+
+/* roboto-cyrillic-300-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(/node_modules/@fontsource/roboto/files/roboto-cyrillic-300-normal.woff2) format('woff2'), url(/node_modules/@fontsource/roboto/files/roboto-cyrillic-300-normal.woff) format('woff');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+
+/* roboto-greek-ext-300-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(/node_modules/@fontsource/roboto/files/roboto-greek-ext-300-normal.woff2) format('woff2'), url(/node_modules/@fontsource/roboto/files/roboto-greek-ext-300-normal.woff) format('woff');
+  unicode-range: U+1F00-1FFF;
+}
+
+/* roboto-greek-300-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(/node_modules/@fontsource/roboto/files/roboto-greek-300-normal.woff2) format('woff2'), url(/node_modules/@fontsource/roboto/files/roboto-greek-300-normal.woff) format('woff');
+  unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;
+}
+
+/* roboto-vietnamese-300-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(/node_modules/@fontsource/roboto/files/roboto-vietnamese-300-normal.woff2) format('woff2'), url(/node_modules/@fontsource/roboto/files/roboto-vietnamese-300-normal.woff) format('woff');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;
+}
+
+/* roboto-latin-ext-300-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(/node_modules/@fontsource/roboto/files/roboto-latin-ext-300-normal.woff2) format('woff2'), url(/node_modules/@fontsource/roboto/files/roboto-latin-ext-300-normal.woff) format('woff');
+  unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+/* roboto-latin-300-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(/node_modules/@fontsource/roboto/files/roboto-latin-300-normal.woff2) format('woff2'), url(/node_modules/@fontsource/roboto/files/roboto-latin-300-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}</style><style type="text/css" data-vite-dev-id="D:/Tanish/practice/admin-dashboard-react/node_modules/@fontsource/roboto/700.css">/* roboto-cyrillic-ext-700-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(/node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-700-normal.woff2) format('woff2'), url(/node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-700-normal.woff) format('woff');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+}
+
+/* roboto-cyrillic-700-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(/node_modules/@fontsource/roboto/files/roboto-cyrillic-700-normal.woff2) format('woff2'), url(/node_modules/@fontsource/roboto/files/roboto-cyrillic-700-normal.woff) format('woff');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+
+/* roboto-greek-ext-700-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(/node_modules/@fontsource/roboto/files/roboto-greek-ext-700-normal.woff2) format('woff2'), url(/node_modules/@fontsource/roboto/files/roboto-greek-ext-700-normal.woff) format('woff');
+  unicode-range: U+1F00-1FFF;
+}
+
+/* roboto-greek-700-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(/node_modules/@fontsource/roboto/files/roboto-greek-700-normal.woff2) format('woff2'), url(/node_modules/@fontsource/roboto/files/roboto-greek-700-normal.woff) format('woff');
+  unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;
+}
+
+/* roboto-vietnamese-700-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(/node_modules/@fontsource/roboto/files/roboto-vietnamese-700-normal.woff2) format('woff2'), url(/node_modules/@fontsource/roboto/files/roboto-vietnamese-700-normal.woff) format('woff');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;
+}
+
+/* roboto-latin-ext-700-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(/node_modules/@fontsource/roboto/files/roboto-latin-ext-700-normal.woff2) format('woff2'), url(/node_modules/@fontsource/roboto/files/roboto-latin-ext-700-normal.woff) format('woff');
+  unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+/* roboto-latin-700-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(/node_modules/@fontsource/roboto/files/roboto-latin-700-normal.woff2) format('woff2'), url(/node_modules/@fontsource/roboto/files/roboto-latin-700-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}</style><style type="text/css" data-vite-dev-id="D:/Tanish/practice/admin-dashboard-react/node_modules/@fontsource/inter/400.css">/* inter-cyrillic-ext-400-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/node_modules/@fontsource/inter/files/inter-cyrillic-ext-400-normal.woff2) format('woff2'), url(/node_modules/@fontsource/inter/files/inter-cyrillic-ext-400-normal.woff) format('woff');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+}
+
+/* inter-cyrillic-400-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/node_modules/@fontsource/inter/files/inter-cyrillic-400-normal.woff2) format('woff2'), url(/node_modules/@fontsource/inter/files/inter-cyrillic-400-normal.woff) format('woff');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+
+/* inter-greek-ext-400-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/node_modules/@fontsource/inter/files/inter-greek-ext-400-normal.woff2) format('woff2'), url(/node_modules/@fontsource/inter/files/inter-greek-ext-400-normal.woff) format('woff');
+  unicode-range: U+1F00-1FFF;
+}
+
+/* inter-greek-400-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/node_modules/@fontsource/inter/files/inter-greek-400-normal.woff2) format('woff2'), url(/node_modules/@fontsource/inter/files/inter-greek-400-normal.woff) format('woff');
+  unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;
+}
+
+/* inter-vietnamese-400-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/node_modules/@fontsource/inter/files/inter-vietnamese-400-normal.woff2) format('woff2'), url(/node_modules/@fontsource/inter/files/inter-vietnamese-400-normal.woff) format('woff');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;
+}
+
+/* inter-latin-ext-400-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/node_modules/@fontsource/inter/files/inter-latin-ext-400-normal.woff2) format('woff2'), url(/node_modules/@fontsource/inter/files/inter-latin-ext-400-normal.woff) format('woff');
+  unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+/* inter-latin-400-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/node_modules/@fontsource/inter/files/inter-latin-400-normal.woff2) format('woff2'), url(/node_modules/@fontsource/inter/files/inter-latin-400-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}</style><style type="text/css" data-vite-dev-id="D:/Tanish/practice/admin-dashboard-react/node_modules/@fontsource/inter/500.css">/* inter-cyrillic-ext-500-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/node_modules/@fontsource/inter/files/inter-cyrillic-ext-500-normal.woff2) format('woff2'), url(/node_modules/@fontsource/inter/files/inter-cyrillic-ext-500-normal.woff) format('woff');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+}
+
+/* inter-cyrillic-500-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/node_modules/@fontsource/inter/files/inter-cyrillic-500-normal.woff2) format('woff2'), url(/node_modules/@fontsource/inter/files/inter-cyrillic-500-normal.woff) format('woff');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+
+/* inter-greek-ext-500-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/node_modules/@fontsource/inter/files/inter-greek-ext-500-normal.woff2) format('woff2'), url(/node_modules/@fontsource/inter/files/inter-greek-ext-500-normal.woff) format('woff');
+  unicode-range: U+1F00-1FFF;
+}
+
+/* inter-greek-500-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/node_modules/@fontsource/inter/files/inter-greek-500-normal.woff2) format('woff2'), url(/node_modules/@fontsource/inter/files/inter-greek-500-normal.woff) format('woff');
+  unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;
+}
+
+/* inter-vietnamese-500-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/node_modules/@fontsource/inter/files/inter-vietnamese-500-normal.woff2) format('woff2'), url(/node_modules/@fontsource/inter/files/inter-vietnamese-500-normal.woff) format('woff');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;
+}
+
+/* inter-latin-ext-500-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/node_modules/@fontsource/inter/files/inter-latin-ext-500-normal.woff2) format('woff2'), url(/node_modules/@fontsource/inter/files/inter-latin-ext-500-normal.woff) format('woff');
+  unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+/* inter-latin-500-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/node_modules/@fontsource/inter/files/inter-latin-500-normal.woff2) format('woff2'), url(/node_modules/@fontsource/inter/files/inter-latin-500-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}</style><style type="text/css" data-vite-dev-id="D:/Tanish/practice/admin-dashboard-react/node_modules/@fontsource/inter/600.css">/* inter-cyrillic-ext-600-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(/node_modules/@fontsource/inter/files/inter-cyrillic-ext-600-normal.woff2) format('woff2'), url(/node_modules/@fontsource/inter/files/inter-cyrillic-ext-600-normal.woff) format('woff');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+}
+
+/* inter-cyrillic-600-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(/node_modules/@fontsource/inter/files/inter-cyrillic-600-normal.woff2) format('woff2'), url(/node_modules/@fontsource/inter/files/inter-cyrillic-600-normal.woff) format('woff');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+
+/* inter-greek-ext-600-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(/node_modules/@fontsource/inter/files/inter-greek-ext-600-normal.woff2) format('woff2'), url(/node_modules/@fontsource/inter/files/inter-greek-ext-600-normal.woff) format('woff');
+  unicode-range: U+1F00-1FFF;
+}
+
+/* inter-greek-600-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(/node_modules/@fontsource/inter/files/inter-greek-600-normal.woff2) format('woff2'), url(/node_modules/@fontsource/inter/files/inter-greek-600-normal.woff) format('woff');
+  unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;
+}
+
+/* inter-vietnamese-600-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(/node_modules/@fontsource/inter/files/inter-vietnamese-600-normal.woff2) format('woff2'), url(/node_modules/@fontsource/inter/files/inter-vietnamese-600-normal.woff) format('woff');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;
+}
+
+/* inter-latin-ext-600-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(/node_modules/@fontsource/inter/files/inter-latin-ext-600-normal.woff2) format('woff2'), url(/node_modules/@fontsource/inter/files/inter-latin-ext-600-normal.woff) format('woff');
+  unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+/* inter-latin-600-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(/node_modules/@fontsource/inter/files/inter-latin-600-normal.woff2) format('woff2'), url(/node_modules/@fontsource/inter/files/inter-latin-600-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}</style><style type="text/css" data-vite-dev-id="D:/Tanish/practice/admin-dashboard-react/node_modules/@fontsource/inter/700.css">/* inter-cyrillic-ext-700-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(/node_modules/@fontsource/inter/files/inter-cyrillic-ext-700-normal.woff2) format('woff2'), url(/node_modules/@fontsource/inter/files/inter-cyrillic-ext-700-normal.woff) format('woff');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+}
+
+/* inter-cyrillic-700-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(/node_modules/@fontsource/inter/files/inter-cyrillic-700-normal.woff2) format('woff2'), url(/node_modules/@fontsource/inter/files/inter-cyrillic-700-normal.woff) format('woff');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+
+/* inter-greek-ext-700-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(/node_modules/@fontsource/inter/files/inter-greek-ext-700-normal.woff2) format('woff2'), url(/node_modules/@fontsource/inter/files/inter-greek-ext-700-normal.woff) format('woff');
+  unicode-range: U+1F00-1FFF;
+}
+
+/* inter-greek-700-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(/node_modules/@fontsource/inter/files/inter-greek-700-normal.woff2) format('woff2'), url(/node_modules/@fontsource/inter/files/inter-greek-700-normal.woff) format('woff');
+  unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;
+}
+
+/* inter-vietnamese-700-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(/node_modules/@fontsource/inter/files/inter-vietnamese-700-normal.woff2) format('woff2'), url(/node_modules/@fontsource/inter/files/inter-vietnamese-700-normal.woff) format('woff');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;
+}
+
+/* inter-latin-ext-700-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(/node_modules/@fontsource/inter/files/inter-latin-ext-700-normal.woff2) format('woff2'), url(/node_modules/@fontsource/inter/files/inter-latin-ext-700-normal.woff) format('woff');
+  unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+/* inter-latin-700-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(/node_modules/@fontsource/inter/files/inter-latin-700-normal.woff2) format('woff2'), url(/node_modules/@fontsource/inter/files/inter-latin-700-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}</style><style type="text/css" data-vite-dev-id="D:/Tanish/practice/admin-dashboard-react/node_modules/@fontsource/poppins/400.css">/* poppins-latin-ext-400-normal */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/node_modules/@fontsource/poppins/files/poppins-latin-ext-400-normal.woff2) format('woff2'), url(/node_modules/@fontsource/poppins/files/poppins-latin-ext-400-normal.woff) format('woff');
+  unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+/* poppins-latin-400-normal */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/node_modules/@fontsource/poppins/files/poppins-latin-400-normal.woff2) format('woff2'), url(/node_modules/@fontsource/poppins/files/poppins-latin-400-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}</style><style type="text/css" data-vite-dev-id="D:/Tanish/practice/admin-dashboard-react/node_modules/@fontsource/poppins/500.css">/* poppins-latin-ext-500-normal */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/node_modules/@fontsource/poppins/files/poppins-latin-ext-500-normal.woff2) format('woff2'), url(/node_modules/@fontsource/poppins/files/poppins-latin-ext-500-normal.woff) format('woff');
+  unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+/* poppins-latin-500-normal */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/node_modules/@fontsource/poppins/files/poppins-latin-500-normal.woff2) format('woff2'), url(/node_modules/@fontsource/poppins/files/poppins-latin-500-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}</style><style type="text/css" data-vite-dev-id="D:/Tanish/practice/admin-dashboard-react/node_modules/@fontsource/poppins/600.css">/* poppins-latin-ext-600-normal */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(/node_modules/@fontsource/poppins/files/poppins-latin-ext-600-normal.woff2) format('woff2'), url(/node_modules/@fontsource/poppins/files/poppins-latin-ext-600-normal.woff) format('woff');
+  unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+/* poppins-latin-600-normal */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(/node_modules/@fontsource/poppins/files/poppins-latin-600-normal.woff2) format('woff2'), url(/node_modules/@fontsource/poppins/files/poppins-latin-600-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}</style><style type="text/css" data-vite-dev-id="D:/Tanish/practice/admin-dashboard-react/node_modules/@fontsource/poppins/700.css">/* poppins-latin-ext-700-normal */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(/node_modules/@fontsource/poppins/files/poppins-latin-ext-700-normal.woff2) format('woff2'), url(/node_modules/@fontsource/poppins/files/poppins-latin-ext-700-normal.woff) format('woff');
+  unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+/* poppins-latin-700-normal */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(/node_modules/@fontsource/poppins/files/poppins-latin-700-normal.woff2) format('woff2'), url(/node_modules/@fontsource/poppins/files/poppins-latin-700-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}</style><style type="text/css" data-vite-dev-id="D:/Tanish/practice/admin-dashboard-react/src/assets/scss/style.scss">/*
+ * Container style
+ */
+.ps {
+  overflow: hidden !important;
+  overflow-anchor: none;
+  -ms-overflow-style: none;
+  touch-action: auto;
+  -ms-touch-action: auto;
+}
+/*
+ * Scrollbar rail styles
+ */
+.ps__rail-x {
+  display: none;
+  opacity: 0;
+  transition: background-color .2s linear, opacity .2s linear;
+  -webkit-transition: background-color .2s linear, opacity .2s linear;
+  height: 15px;
+  /* there must be 'bottom' or 'top' for ps__rail-x */
+  bottom: 0px;
+  /* please don't change 'position' */
+  position: absolute;
+}
+.ps__rail-y {
+  display: none;
+  opacity: 0;
+  transition: background-color .2s linear, opacity .2s linear;
+  -webkit-transition: background-color .2s linear, opacity .2s linear;
+  width: 15px;
+  /* there must be 'right' or 'left' for ps__rail-y */
+  right: 0;
+  /* please don't change 'position' */
+  position: absolute;
+}
+.ps--active-x > .ps__rail-x,
+.ps--active-y > .ps__rail-y {
+  display: block;
+  background-color: transparent;
+}
+.ps:hover > .ps__rail-x,
+.ps:hover > .ps__rail-y,
+.ps--focus > .ps__rail-x,
+.ps--focus > .ps__rail-y,
+.ps--scrolling-x > .ps__rail-x,
+.ps--scrolling-y > .ps__rail-y {
+  opacity: 0.6;
+}
+.ps .ps__rail-x:hover,
+.ps .ps__rail-y:hover,
+.ps .ps__rail-x:focus,
+.ps .ps__rail-y:focus,
+.ps .ps__rail-x.ps--clicking,
+.ps .ps__rail-y.ps--clicking {
+  background-color: #eee;
+  opacity: 0.9;
+}
+/*
+ * Scrollbar thumb styles
+ */
+.ps__thumb-x {
+  background-color: #aaa;
+  border-radius: 6px;
+  transition: background-color .2s linear, height .2s ease-in-out;
+  -webkit-transition: background-color .2s linear, height .2s ease-in-out;
+  height: 6px;
+  /* there must be 'bottom' for ps__thumb-x */
+  bottom: 2px;
+  /* please don't change 'position' */
+  position: absolute;
+}
+.ps__thumb-y {
+  background-color: #aaa;
+  border-radius: 6px;
+  transition: background-color .2s linear, width .2s ease-in-out;
+  -webkit-transition: background-color .2s linear, width .2s ease-in-out;
+  width: 6px;
+  /* there must be 'right' for ps__thumb-y */
+  right: 2px;
+  /* please don't change 'position' */
+  position: absolute;
+}
+.ps__rail-x:hover > .ps__thumb-x,
+.ps__rail-x:focus > .ps__thumb-x,
+.ps__rail-x.ps--clicking .ps__thumb-x {
+  background-color: #999;
+  height: 11px;
+}
+.ps__rail-y:hover > .ps__thumb-y,
+.ps__rail-y:focus > .ps__thumb-y,
+.ps__rail-y.ps--clicking .ps__thumb-y {
+  background-color: #999;
+  width: 11px;
+}
+/* MS supports */
+@supports (-ms-overflow-style: none) {
+  .ps {
+    overflow: auto !important;
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .ps {
+    overflow: auto !important;
+  }
+}
+.scrollbar-container {
+  position: relative;
+  height: 100%; }
+:export {
+  paper: #ffffff;
+  primaryLight: #eef2f6;
+  primary200: #90caf9;
+  primaryMain: #2196f3;
+  primaryDark: #1e88e5;
+  primary800: #1565c0;
+  secondaryLight: #ede7f6;
+  secondary200: #b39ddb;
+  secondaryMain: #673ab7;
+  secondaryDark: #5e35b1;
+  secondary800: #4527a0;
+  successLight: #b9f6ca;
+  success200: #69f0ae;
+  successMain: #00e676;
+  successDark: #00c853;
+  errorLight: #ef9a9a;
+  errorMain: #f44336;
+  errorDark: #c62828;
+  orangeLight: #fbe9e7;
+  orangeMain: #ffab91;
+  orangeDark: #d84315;
+  warningLight: #fff8e1;
+  warningMain: #ffe57f;
+  warningDark: #ffc107;
+  grey50: #f8fafc;
+  grey100: #eef2f6;
+  grey200: #e3e8ef;
+  grey300: #cdd5df;
+  grey500: #697586;
+  grey600: #4b5565;
+  grey700: #364152;
+  grey900: #121926;
+  darkPaper: #111936;
+  darkBackground: #1a223f;
+  darkLevel1: #29314f;
+  darkLevel2: #212946;
+  darkTextTitle: #d7dcec;
+  darkTextPrimary: #bdc8f0;
+  darkTextSecondary: #8492c4;
+  darkPrimaryLight: #eef2f6;
+  darkPrimaryMain: #2196f3;
+  darkPrimaryDark: #1e88e5;
+  darkPrimary200: #90caf9;
+  darkPrimary800: #1565c0;
+  darkSecondaryLight: #d1c4e9;
+  darkSecondaryMain: #7c4dff;
+  darkSecondaryDark: #651fff;
+  darkSecondary200: #b39ddb;
+  darkSecondary800: #6200ea;
+}
+.fullscreen .react-images__blanket {
+  z-index: 1200;
+}
+.apexcharts-legend-series .apexcharts-legend-marker {
+  margin-right: 8px;
+}
+.scrollbar-container .ps__rail-y:hover > .ps__thumb-y, .scrollbar-container .ps__rail-y:focus > .ps__thumb-y, .scrollbar-container .ps__rail-y.ps--clicking .ps__thumb-y {
+  background-color: #697586;
+  width: 5px;
+}
+.scrollbar-container .ps__thumb-y {
+  background-color: #697586;
+  border-radius: 6px;
+  width: 5px;
+  right: 0;
+}
+.scrollbar-container.ps.ps--active-y > .ps__rail-y,
+.scrollbar-container > .ps.ps--active-y > .ps__rail-y {
+  width: 5px;
+  background-color: transparent !important;
+  z-index: 999;
+}
+.scrollbar-container.ps.ps--active-y > .ps__rail-y:hover, .scrollbar-container.ps.ps--active-y > .ps__rail-y.ps--clicking,
+.scrollbar-container > .ps.ps--active-y > .ps__rail-y:hover,
+.scrollbar-container > .ps.ps--active-y > .ps__rail-y.ps--clicking {
+  width: 5px;
+  background-color: transparent;
+}
+.scrollbar-container.ps.ps--scrolling-y > .ps__rail-y, .scrollbar-container.ps.ps--scrolling-x > .ps__rail-x,
+.scrollbar-container > .ps.ps--scrolling-y > .ps__rail-y,
+.scrollbar-container > .ps.ps--scrolling-x > .ps__rail-x {
+  opacity: 0.4;
+  background-color: transparent;
+}
+@keyframes wings {
+  50% {
+    transform: translateY(-40px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes bounce {
+  0%, 20%, 53%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translateZ(0);
+  }
+  40%, 43% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -5px, 0);
+  }
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -7px, 0);
+  }
+  80% {
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translateZ(0);
+  }
+  90% {
+    transform: translate3d(0, -2px, 0);
+  }
+}
+@keyframes slideY {
+  0%, 50%, 100% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  75% {
+    transform: translateY(10px);
+  }
+}
+@keyframes slideX {
+  0%, 50%, 100% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+}
+/*# sourceMappingURL=style.scss.map */</style><style data-emotion="css-global" data-s="">html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;box-sizing:border-box;-webkit-text-size-adjust:100%;}</style><style data-emotion="css-global" data-s="">*,*::before,*::after{box-sizing:inherit;}</style><style data-emotion="css-global" data-s="">strong,b{font-weight:700;}</style><style data-emotion="css-global" data-s="">body{margin:0;color:#364152;font-size:0.875rem;font-weight:400;line-height:1.334em;font-family:'Roboto',sans-serif;background-color:#ffffff;}</style><style data-emotion="css-global" data-s="">@media print{body{background-color:#fff;}}</style><style data-emotion="css-global" data-s="">body::backdrop{background-color:#ffffff;}</style><style data-emotion="css" data-s="">.css-1h8td7x-MuiDialog-root{}</style><style data-emotion="css" data-s="">@media print{.css-1h8td7x-MuiDialog-root{position:absolute!important;}}</style></head>
+
+<body data-new-gr-c-s-check-loaded="14.1200.0" data-gr-ext-installed="">
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"> <h2>Unexpected Application Error!</h2><h3 style="font-style: italic;">todos?.map is not a function</h3><pre style="padding: 0.5rem; background-color: rgba(200, 200, 200, 0.5);">TypeError: todos?.map is not a function
+    at http://localhost:3000/src/views/pages/Task-Board/Board/index.jsx?t=1728977193908:82:12
+    at updateMemo (http://localhost:3000/node_modules/.vite/deps/chunk-3IHV7RO6.js?v=e0f755e9:12210:27)
+    at Object.useMemo (http://localhost:3000/node_modules/.vite/deps/chunk-3IHV7RO6.js?v=e0f755e9:12830:24)
+    at useMemo (http://localhost:3000/node_modules/.vite/deps/chunk-OU5AQDZK.js?v=e0f755e9:1094:29)
+    at Board (http://localhost:3000/src/views/pages/Task-Board/Board/index.jsx?t=1728977193908:75:3)
+    at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-3IHV7RO6.js?v=e0f755e9:11568:26)
+    at updateFunctionComponent (http://localhost:3000/node_modules/.vite/deps/chunk-3IHV7RO6.js?v=e0f755e9:14582:28)
+    at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-3IHV7RO6.js?v=e0f755e9:15924:22)
+    at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-3IHV7RO6.js?v=e0f755e9:19753:22)
+    at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-3IHV7RO6.js?v=e0f755e9:19198:20)</pre><p>💿 Hey developer 👋</p><p>You can provide a way better UX than this when your app throws errors by providing your own <code style="padding: 2px 4px; background-color: rgba(200, 200, 200, 0.5);">ErrorBoundary</code> or <code style="padding: 2px 4px; background-color: rgba(200, 200, 200, 0.5);">errorElement</code> prop on your route.</p></div>
+  <!--
+          This HTML file is a template.
+          If you open it directly in the browser, you will see an empty page.
+
+          You can add webfonts, meta tags, or analytics to this file.
+          The build step will place the bundled scripts into the <body> tag.
+
+          To begin the development, run `npm start` or `yarn start`.
+          To create a production bundle, use `npm run build` or `yarn build`.
+        -->
+  <script type="module" src="./Dashboard_files/index.jsx"></script>
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;limited&quot;,&quot;isActive&quot;:false,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>

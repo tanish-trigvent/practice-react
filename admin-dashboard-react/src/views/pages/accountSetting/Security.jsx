@@ -18,9 +18,12 @@ const Security = () => {
   const handleSubmit = async (values) => {
     try {
       const response = await changePassword({ id: userId, payload: values });
-      showSnackbar(response.message, "success");
+      showSnackbar(
+        response?.message,
+        response?.status === 400 ? "error" : "success"
+      );
     } catch (error) {
-      showSnackbar(error.response.data || error.message, "error");
+      showSnackbar(error?.response?.data || error?.message, "error");
     }
   };
 

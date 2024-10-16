@@ -8,6 +8,7 @@ import AccountSetting from "views/pages/accountSetting";
 import AdminRoute from "./AdminRoute";
 import ColorCombination from "views/pages/color-combination";
 import ColorSurvey from "views/pages/color-survey";
+import TaskBoard from "views/pages/Task-Board";
 
 const DashboardDefault = Loadable(lazy(() => import("views/dashboard")));
 const Todo = Loadable(lazy(() => import("views/pages/Todo")));
@@ -58,6 +59,10 @@ const MainRoutes = {
           <ColorSurvey />
         </AdminRoute>
       ),
+    },
+    {
+      path: "task-board",
+      element: <TaskBoard />,
     },
   ],
 };

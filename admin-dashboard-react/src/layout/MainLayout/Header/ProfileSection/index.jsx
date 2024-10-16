@@ -30,6 +30,7 @@ import User1 from "assets/images/users/user-round.svg";
 // assets
 import { IconLogout, IconSettings } from "@tabler/icons-react";
 import { userLogout } from "../../../../redux/user/userSlice";
+const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
 // ==============================|| PROFILE MENU ||============================== //
 
@@ -39,7 +40,7 @@ const ProfileSection = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const user = useSelector((state) => state?.userReducer?.user);
-  const imageUrl = `http://localhost:5000/${user?.profilePhoto}`;
+  const imageUrl = `${apiUrl}/${user?.profilePhoto}`;
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();

@@ -48,6 +48,13 @@ const BasicAutocomplete = ({
               helperText={error ? error.message : null}
             />
           )}
+          renderOption={(props, option) => {
+            // If options are empty, show "No options"
+            if (options.length === 0) {
+              return <li {...props}>No options</li>;
+            }
+            return <li {...props}>{getOptionLabel(option)}</li>;
+          }}
           {...props}
         />
       )}

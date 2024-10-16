@@ -5,21 +5,25 @@ export default async (req, res) => {
     const { user, query } = req;
 
     if (user?.role == "admin") {
-      const data = await todo.find({
-        $or: [
-          { title: { $regex: query.search, $options: "i" } },
-          { description: { $regex: query.search, $options: "i" } },
-        ],
-      });
+      const data = await todo
+        .find({
+          $or: [
+            { title: { $regex: query.search, $options: "i" } },
+            { description: { $regex: query.search, $options: "i" } },
+          ],
+        })
+        .populate("createdBy");
       return res.send(data);
     } else {
-      const data = await todo.find({
-        createdBy: user?._id,
-        $or: [
-          { title: { $regex: query.search, $options: "i" } },
-          { description: { $regex: query.search, $options: "i" } },
-        ],
-      });
+      const data = await todo
+        .find({
+          createdBy: user?._id,
+          $or: [
+            { title: { $regex: query.search, $options: "i" } },
+            { description: { $regex: query.search, $options: "i" } },
+          ],
+        })
+        .populate("createdBy");
       return res.send(data);
     }
   } catch (error) {
