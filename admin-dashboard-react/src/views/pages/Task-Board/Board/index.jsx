@@ -91,7 +91,11 @@ export default function Board() {
   return (
     <Stack
       direction={"row"}
-      sx={{ overflow: "auto", width: "100vw", height: "90vh" }}
+      sx={{
+        overflow: "auto",
+        width: "100vw",
+        height: "90vh",
+      }}
     >
       <DndContext
         announcements={defaultAnnouncements}
@@ -101,10 +105,30 @@ export default function Board() {
         onDragOver={handleDragOver}
         onDragEnd={handleDragEnd}
       >
-        <Container id="todo" items={items.todo} />
-        <Container id="In-Progress" items={items.inProgress} />
-        <Container id="overDue" items={items.overDue} />
-        <Container id="completed" items={items.completed} />
+        <Container
+          id="todo"
+          items={items.todo}
+          updateTodo={updateTodo}
+          refetchTodo={refetchTodo}
+        />
+        <Container
+          id="In-Progress"
+          items={items.inProgress}
+          updateTodo={updateTodo}
+          refetchTodo={refetchTodo}
+        />
+        <Container
+          id="overDue"
+          items={items.overDue}
+          updateTodo={updateTodo}
+          refetchTodo={refetchTodo}
+        />
+        <Container
+          id="completed"
+          items={items.completed}
+          updateTodo={updateTodo}
+          refetchTodo={refetchTodo}
+        />
         <DragOverlay>{activeId ? <Item id={activeId} /> : null}</DragOverlay>
       </DndContext>
     </Stack>

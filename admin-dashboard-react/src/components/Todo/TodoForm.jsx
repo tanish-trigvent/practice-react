@@ -13,7 +13,7 @@ const TodoForm = ({ disabled = "false" }) => {
     {
       id: 2,
       label: "In-Progress",
-      value: "In-progress",
+      value: "In-Progress",
     },
     {
       id: 3,
