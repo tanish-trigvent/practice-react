@@ -18,7 +18,7 @@ export default function useUser(userId) {
 
   const { mutateAsync: userRegister } = useMutation(
     async (data) => {
-      const response = await request.post("/user-register", data);
+      const response = await request.post("/user", data);
       return response.data;
     }
     // {

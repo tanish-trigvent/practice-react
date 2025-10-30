@@ -3,12 +3,17 @@ import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import {
   Avatar,
+  AvatarGroup,
   Grid,
   IconButton,
   Stack,
   Tooltip,
   Typography,
+  Chip,
+  Box,
 } from "@mui/material";
+import AssignmentTurnedInOutlinedIcon from "@mui/icons-material/AssignmentTurnedInOutlined";
+import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
 import { IconClock, IconPencil, IconTrash } from "@tabler/icons-react";
 import dayjs from "dayjs";
 import SubCard from "ui-component/cards/SubCard";
@@ -25,12 +30,10 @@ export function Item({ item, attributes, listeners, updateTodo, refetchTodo }) {
   const { isAddingTodo } = useTodo();
   const { showSnackbar } = useSnackbar();
   const style = {
-    // alignItems: "center",
-    // justifyContent: "center",
-    margin: "4px 0",
-    borderRadius: "10px",
-    transition: "transform 0.3s ease-in-out",
-    backgroundColor: "#343a40",
+    margin: "8px 0",
+    // borderRadius: 10,
+    transition: "transform 0.2s ease, box-shadow 0.2s ease",
+    backgroundColor: "#ffffff",
   };
   const borderColor =
     item?.status === "completed"
@@ -95,12 +98,35 @@ export function Item({ item, attributes, listeners, updateTodo, refetchTodo }) {
     });
   };
 
+  const statusAccentColor =
+    item?.status === "completed"
+      ? "#22c55e"
+      : item?.status === "In-Progress"
+        ? "#3b82f6"
+        : item?.status === "overDue"
+          ? "#ef4444"
+          : "#94a3b8";
+
+  const assignees =
+    Array.isArray(item?.assignees) && item?.assignees.length > 0
+      ? item?.assignees
+      : [item?.createdBy].filter(Boolean);
+
+  const displayKey =
+    item?.code || `NUC-${(item?._id || "").slice(-3) || "205"}`;
+  const estimateCount = item?.estimate || item?.storyPoints || 9;
+
   return (
     <SubCard
       sx={{
         ...style,
-        // borderColor: borderColor,
-        "&:hover": { borderColor: hoverBorderColor },
+        border: "1px solid #e6e9ef",
+        boxShadow: "0 1px 3px rgba(16,24,40,0.08)",
+        borderLeft: `4px solid ${statusAccentColor}`,
+        "&:hover": {
+          boxShadow: "0 4px 10px rgba(16,24,40,0.12)",
+          borderColor: "#d6dbe5",
+        },
       }}
       title={
         <>
@@ -134,7 +160,7 @@ export function Item({ item, attributes, listeners, updateTodo, refetchTodo }) {
     >
       <Grid container sx={{ cursor: "grab" }} {...attributes} {...listeners}>
         <Grid sm={12} item>
-          <Typography variant="h5" color={"white"}>
+          <Typography variant="subtitle1" color={"#0f172a"} fontWeight={600}>
             {item?.title}
           </Typography>
         </Grid>
@@ -144,13 +170,70 @@ export function Item({ item, attributes, listeners, updateTodo, refetchTodo }) {
             justifyContent={"space-between"}
             alignItems={"center"}
           >
-            <Stack direction={"row"} alignItems={"center"}>
-              <IconClock size={"16px"} color={"white"} />
-              <Typography fontSize={"12px"} color={"white"}>
-                {dayjs(item?.startTime).format("D MMM")}
-              </Typography>
+            <Stack direction={"row"} alignItems={"center"} spacing={1}>
+              <Chip
+                size="small"
+                icon={
+                  <AssignmentTurnedInOutlinedIcon sx={{ color: "#1e8e3e" }} />
+                }
+                label={displayKey}
+                sx={{
+                  height: 24,
+                  bgcolor: "#e7f5ec",
+                  color: "#166534",
+                  borderRadius: 1,
+                  "& .MuiChip-label": { px: 1 },
+                }}
+              />
+              <Stack direction={"row"} alignItems={"center"} spacing={0.5}>
+                <Box
+                  sx={{
+                    width: 22,
+                    height: 22,
+                    borderRadius: "50%",
+                    bgcolor: "#eef2f7",
+                    color: "#475569",
+                    fontSize: 12,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    border: "1px solid #e6e9ef",
+                  }}
+                >
+                  {estimateCount}
+                </Box>
+                <KeyboardArrowDownRoundedIcon
+                  sx={{ color: "#64748b" }}
+                  fontSize="small"
+                />
+              </Stack>
             </Stack>
-            <Avatar sx={{ width: 30, height: 30 }} src={imageUrl} />
+            <Stack direction={"row"} alignItems={"center"} spacing={1}>
+              <Stack
+                direction={"row"}
+                alignItems={"center"}
+                spacing={0.5}
+                sx={{ pr: 0.5 }}
+              >
+                <IconClock size={"16px"} color={"#64748b"} />
+                <Typography fontSize={"12px"} color={"#64748b"}>
+                  {dayjs(item?.startTime).format("D MMM")}
+                </Typography>
+              </Stack>
+              <AvatarGroup
+                max={3}
+                sx={{
+                  "& .MuiAvatar-root": { width: 26, height: 26, fontSize: 12 },
+                }}
+              >
+                {assignees?.slice(0, 3)?.map((user, idx) => (
+                  <Avatar
+                    key={user?._id || idx}
+                    src={`${apiUrl}/${user?.profilePhoto}`}
+                  />
+                ))}
+              </AvatarGroup>
+            </Stack>
           </Stack>
         </Grid>
       </Grid>

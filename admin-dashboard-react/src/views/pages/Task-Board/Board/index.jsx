@@ -93,8 +93,11 @@ export default function Board() {
       direction={"row"}
       sx={{
         overflow: "auto",
-        width: "100vw",
-        height: "90vh",
+        width: "100%",
+        height: "auto",
+        gap: 2,
+        alignItems: "flex-start",
+        pb: 2,
       }}
     >
       <DndContext
